@@ -1,0 +1,593 @@
+Link ai materiali del corso:
+https://github.com/ITIS-Zuccante/fullstack-course4
+
+Creazione sito in GitHub
+Si sfruttano le GitHub pages:
+- dal sito GitHub, nella pagina del repository click su (ingranaggio) Settings
+  - scorrere in basso fino a GitHub Pages e creare le pagine accettando i default;
+    GitHub crea un sito con url https://alec58.github.io/Coursera-test/
+	e mette i file relativi nel branch "gh-pages" del repository.
+	In GitHub Desktop ho reso attivo il branch gh-pages (serve?)
+  - nella dir radice (locale) del repository creare una dir (es. "Site") e in
+    questa dir creare index.html: il file si vedrà in Internet
+	all'url https://alec58.github.io/Coursera-test/site/
+	... e in "site" si può fare il resto del sito
+	
+browser-sync
+Serve per evitare di dover ricaricare manualmente le pagine sul browser
+dopo le modifiche.
+Da cmd portarsi sulla dir del sito (C:\Users\acazz\Documents\GitHub\Coursera-test\site) e dare il comando
+browser-sync start --server --directory --files "*"
+
+Da adesso in poi, non appena si salvano le modifiche ai file di questa
+dir (e sottodir), nel browser le si vedranno automaticamente, senza
+dover ricaricare la pagina.
+
+Risorse:
+stackoverflow
+
+https://jsfiddle.net/
+permette di scrivere HTML, CSS e plain JS, vedere in tempo reale
+il risultato e ottenere un link di quanto fatto da poter condividere
+
+https://codepen.io/
+
+https://css-tricks.com/
+
+#01 What is HTML?
+HyperText: hypertext is text which contains links to other texts
+Markup: markup means to mark something up, to annotate allo scopo di dare informazioni sul contenuto che viene marcato
+Language: HTML usa un linguaggio formato da marcatori ("tags") che racchiudono informazioni indicandone il tipo (es. titolo, paragrafo di testo, immagine ...)
+HTML is human readable. So these tags look like instructions for a document structure.
+language basically implies
+that it has its own syntax meaning there's a right and a wrong way to code it. 
+Html also has it's own semantics which means tag
+names can mean something either to machines or to humans
+HTML provides the structure which means what components
+does the HTML document have
+Note that that does not tell you anything about how these components are visually
+laid out, what they look like, what color they are, what font size they are.
+It only tells you what are the components
+The color and style is the role of CSS.
+So colors, layouts, font style,
+font sizes, in other words any stylistic types of things
+avaScript, it's job is to provide behavior, provide functionality
+Guerra dei browser; standard; W3C; WHATWG
+Validazione
+Browser statistics (w3schools)
+
+Anatomy of an HTML Tag
+Tag, attributi
+
+Basic HTML Document Structure
+doctype (usarlo SEMPRE): quirk mode e standard mode
+html/head(metadata): charset title/body(contenuto)
+i tag devono essere correttamente nidificati
+il browser interpreta il codice html sequenzialmente, dall'inizio verso la fine del file.
+
+05 HTML Content Models
+The term content model refers to the full behavior the browser
+applies to the elements belonging to that content model,
+and to the nesting rules of those elements: in other words, which elements are allowed to be nested inside which other elements
+Prior to HTML5 specification, HTML elements were either block level or
+inline elements.
+HTML5 split these two content models into seven models
+block-level o inline element
+Block level elements render to begin on the new line by default
+Block-level elements are allowed to contain inline or
+other block-level elements within them.
+This is in contrast to inline elements, which render on the same line by default
+Inline elements also have a restriction that they can only
+contain other in line elements.
+In other words, an inline element cannot have as part of its content a block level element.
+Block-level elements roughly translate into the new HTML5 category of flow content, and inline elements roughly translate into the HTML5 category of phrasing content. 
+Elementi generici: div e span
+The div element is your most generic block-level element, and
+the span is your super generic, inline element. 
+the new line characters (nel codice!) that follow the div tags
+make absolutely no difference to the html page and how it renders
+1 o più spazi = 1 spazio
+
+06 Heading Elements (and some new HTML5 semantic comments)
+what does semantic html element mean?
+Well, a semantic html element is an element that implies some
+meaning to the content.
+In other words, it's an element that tells you something about the content,
+whether its importance, whether it's a little bit of its description,
+it basically hints to you to that meaning.
+Now the reason that's important is because us, humans, and
+machines can understand the meaning of that content surrounded by a semantic
+tag much better than if we just surround it with some tag that doesn't really
+tell us anything other than this is some sort of a division within the document
+First, even though their (dei tag h) default rendering in the browser appears to give them
+visual distinction, these should not be used for styling.
+These elements are only meant to convey structure of your HTML page, nothing more
+and specifically the h1 tag,
+that it is of utmost importance to use it and that it should contain the wording,
+which truly conveys the central topic of the rest of the content
+New HTML5 semantic tags:
+the header tag basically contains some header information about the page.
+So usually, it consists of company logo, some tagline, sometimes, navigation.
+Actually, often, navigation is contained within the header as well
+The nav tag signifies some content that is used for navigation within our website
+we have our familiar h1 tag and
+you should absolutely always have that. 
+section / article
+An aside tag is basically an element that communicates that there's something
+that is inside of this element that is related to the main content of the page,
+but not as direct a relationship as the main content.
+And finally, we have the footer tag, which, just like it sounds,
+has the footer information in it.
+Now, the thing to note about all of these tags is they're all block level elements
+So as far as we're concerned,
+visually we might as well have just used the div tags everywhere.
+However, if you look at the code, it is obvious how much easier it is to read and
+understand what's going on structurally in this HTML page
+That's the power of the semantic elements.
+They inherently convey some meaning
+
+07 Lists
+lists are an incredibly useful HTML structure that allows you to
+group related content. 
+it's totally natural that lists appeal to us as an organization tool
+ul / ol /like; sublist (livelli)
+
+08 HTML Character Entity References
+Since HTML uses certain characters for its syntax, we need a way to differentiate
+between those characters as HTML and those same characters as content
+Specifically, there are three characters that should always be escaped to make
+sure they don't cause rendering issues: > < &
+you should use the HTML entity (&lt; &gt; &amp;)
+&copy; &quote;
+&nbsp; NB: NON usarlo per mettere più spazi! -> fare uno span e stilizzarlo usando i margini
+
+09 Creating Links
+tag a attr href
+Links pretty much what makes the web what it is
+- internal links
+- external links usually starts with http:// e legato a _blank
+It's also a very good idea to always specify a title attribute for the a tag.
+The title attribute is used by the screen readers
+that help the visually impaired people get through the web page
+Another type of link that is extremely important to know about is a fragment identifier
+It's a # followed by some name (fa riferimento a id="nome")
+While fragment identifiers are very useful in order to jump to different parts of
+the same page, recently they have become even more important as they're used for
+navigation within the SPA or Single Page Applications.
+
+10 Displaying Images
+img /src it's a really good idea to always specify the width and the height
+img tag is an inline element
+And if this images take time to load, the page might appear jumpy.
+So this is actually the primary reason why you would want to use the width and
+the height of the image
+You want to tell the browser to reserve this space and
+to visually partition your page such that it knows that there should be something
+going on in there even if it takes time to load it
+And remember to always specify width and height of the image tag whenever possible,
+because without it, it may break your layouts. 
+
+11 Power of CSS
+You need to style your content in a way that's pleasing and useful to the user.
+The use of color, positioning, size, among other things, is all part of that.
+Cascading style sheets, or CSS,
+is the technology that provides the styling capability
+csszengarden.com
+
+12 Anatomy of a CSS Rule
+CSS works by associating rules with HTML elements.
+These rules govern how the content of specified elements should be displayed
+A CSS rule consists of selector. The selector is followed by open and close curly braces. Inside of those braces, we have CSS declaration.
+And it consist of two parts, the property and the value
+Now, the collection of these CSS rules is what's called a style sheet
+Now, in later lecture we'll talk about where CSS styles should really go for
+a real world website.
+But for now, for convenience sake, we'll just put it straight in the head part of the document
+Every browser comes with some default styles that it applies to different HTML
+elements
+
+13 Element, Class, and ID Selectors
+CSS selectors are used to determine which HTML element, or set of elements,
+to apply the CSS declarations to.
+The browser uses its selector API to traverse the DOM or
+Document Object Model, and pick out the elements matching the selector.
+Now crafting a selector is a great skill to have and not only for
+styling using CSS.
+That's because a lot of JavaScript libraries out there
+use the browser selector API to attach behavior and data to HTML elements
+In this lecture, we're going to talk about three different types of selectors,
+element, class, and id selector.
+the element selector is just you specifying the element name
+the class selector is specified with a dot and the name of the class
+The class selector does require a little bit of a change to your HTML document
+in that each element that you want that class applied to
+has to have a attribute class equal to the class name
+Note the differences between the way you define a class and
+then the way you use the class.
+You define the class always with a dot in front of a name.
+There cannot be any space between the dot and
+the name of the class in case no space between the dot and the word blue.
+However, when you use the class, you don't use the dot in its name,
+you just use its name
+The way you specify an id selector is by specifying the value of an id
+of an element within your HTML document, preceded by a pound sign.
+So the name is a value of some id within our HTML document
+the id selector is defined with a pound sign followed
+by the value of an id within your HTML document.
+And again, you can not have any space between the two.
+But when you use it the pound goes away,
+it's just the actual value of the id itself
+Now in order to write more efficient rules,
+CSS allows us to group several selectors into one CSS rule (con la virgola)
+
+14 Combining Selectors
+Combining Selectors is a very powerful technique that allows you to more
+precisely target dumb elements
+element with class selector (p.classe)
+child selector (elPadre > elFiglio - si legge da dx a sx: seleziona tutti gli elementi del tipo specificato che sono figli diretti di un padre)
+descendant selector (elPadre elSotto - si legge da dx a sx: seleziona tutti gli elementi del tipo specificato che sono discendenti di un padre)
+the way you apply multiple classes to an element
+is just by listing them in the class attribute with a space between them
+So the way we could specify that, it's just to say, .highlight.mainpoint,
+that is to say that an element that has highlight class and also has
+a mainpoint class assigned to it should be  formattato secondo la regola ...
+
+15 Pseudo-Class Selectors
+Pseudo-class selectors address targeting only the structures that can be targeted by simple combinations of regular selectors, or
+targeting the ability to style based on user interaction with the page.
+For example, we would want the styling of an element to change if the user hovers or moves their mouse over that element
+The way you specify pseudo-class selector, is by specifying some selector
+that we all ready know about with a colon and a predefined pseudo-class name
+In this lecture we're going to cover five of them.
+The first four link, visited, hover, and
+active are pretty basic and is used very, very often.
+The last pseudo-class will cover nth-child is a fairly powerful pseudo-class and
+can get pretty complicated, but
+its basic uses are fairly straight forward
+And the first thing I'd like to do is I'd like to style this unordered list
+as a menu.
+It's a pretty common practice to take an unordered list and style it as a menu
+The first thing we want to do is target these list items.
+So the way we're going to do this is by using our descendant selector by saying
+header li, and we'll turn off the bullet points by saying list-style: none
+The next task is to style the links that are sitting inside the li elements and
+to make them look like buttons.
+However styling links is not exactly as straight forward as styling a regular
+element, and that's because links have states.
+And these states can be expressed using our pseudo-classes
+So here we're targeting two states.
+One is a's being a link that it is.
+And another one a visited
+we want them (i tag a) to block level element
+and give it a width of 200 pixels (e funziona perghé sono block el.)
+However we're not done because what we would like to do is
+on the user hovering over these buttons, besides changing the cursor to a pointer,
+I'd like to have some sort of interaction in the style and
+kind of show the user that they're hovering over these buttons.
+So in order to do that I have to define two more states of the link.
+One is a hover and the other a active. 
+hover is exactly what it sounds
+An active is that state when the user actually clicks on the element but
+hasn't yet released his click
+In it's simplest form, the nth child pseudo-selector allows you to
+target a particular element within a list.
+For example I'd like to target this Facebook fan page link
+
+16 Style Placement
+Your choice for placing styles in one versus another place doesn't only affect
+how reusable the styles are, but
+it also affects which style declarations override other style declarations
+we've been specifying all of our styles
+inside the style tag that sits inside of the head tag of our HTML document. 
+you could specify a CSS style directly on the element by providing
+the style attribute
+This is called inline styling, and as you might have guessed,
+this is the least reusable way of styling elements there is
+For that reason, this is the least preferred method of styling, and
+you should really try to stay as far away from this as possible
+However, what happens if I have multiple pages in my website and
+I want them to look consistent?
+Which means specifying the styles inside the head tag over one particular HTML page
+is really not going to help me with the others.
+That means I really need some sort of other way to specify styles that
+are external to the HTML page and kind of link them back in into my HTML page
+Well, this is what external style sheets are all about.
+And you can see that we're specifying one here with a tag called link,
+and we're telling the browser that it's the style sheet and
+its location using the familiar href attribute
+External style sheets are just styles with lists of CSS rules.
+ in a real-world website,
+you almost always want all your styles to be external to your HTML page. 
+If you're trying to overwrite styles that are external to your HTML page and
+you have no control over, it's better to create your own external CSS file, and
+then specify it below the external CSS file that you have no control over. 
+
+17 Conflict Resolution
+Cascading is a fundamental feature of CSS.
+It's an algorithm defining how to combine properties values originating from
+different sources.
+Origin: the last declaration wins
+The next concept we're going to take a look at is inheritance.
+And it's a pretty simple concept.
+The basic idea is that you have the document object model tree.
+And if you specify some CSS property on some element, all the children and
+grandchildren and so on and so on of that element will also inherit that
+property without you having to specify the property for each and every element
+it happens to be a very powerful technique as well.
+It allows me to specify one rule and
+have all the children of the target element inherit that rule. 
+It's a very common practice to specify some declarations for the body tag and
+the reason is obvious.
+Body is the top element in our HTML as far as the view port is concerned. 
+Next, let's talk about the concept of specificity.
+most specific selector combination wins.
+You can think of specificity of your selectors as keeping a score.
+The selectors with the highest score win. 
+The most specific targeting that exists in CSS doesn't
+actually use any selectors at all and that is the style attribute on an element
+Next is specificity value, comes the ID, then the class or pseudo-class, and
+then the number of elements that are used in your selected combination. 
+There's one more concept that I'd like to show you.
+And that is a concept of overriding all these rules taken all together with
+the !important. 
+So avoid using important unless you absolutely have to
+
+18 Styling Text
+font-family
+So what you usually put in the font-family is the value is combinations of fonts.
+And the reason you put not just one font, but a few fonts is because
+when you specify font-family in this way, you're relying on the client's computer,
+you're relying on the user's computer to have that font installed.
+And it's possible that a particular font will not be installed on the user's
+computer, so you want to provide some options, and at the very least, you want
+to provide whether you want a serif type of font, or sans-serif type of font. 
+color
+font-style
+font-weight
+font size
+Now don't confuse this with points, these are pixels.
+Points are used in print when you do Microsoft Word or something like that, but
+not on screen. On screen you use pixels.
+Pixels are what's considered absolute unit of measurement for size.
+However, they do have a bit of a relative component to them.
+Pixels are relative to the viewing device.
+For low DPI or low dots per inch devices, one pixel is one device pixel dot of the display.
+For printers and high-resolution screens, one pixel implies multiple device pixels.
+Point is, higher DPI devices will give you sharper text, because for every
+pixel that it's drawing, it's actually drawing multiple pixels on the device.
+With all that said, pixels is still considered an absolute unit of measurement. 
+text-transform
+text-align
+Okay let's talk a little bit about relative font sizing.
+Now there are two units of measurements that are relative that we're going
+to talk about and that is percent and ems. 
+Let's start with percent first of all let's specify that our body tag
+should have fun size of a 120 %.
+And what that means is Is that we want to take whatever the default size is,
+and by default I mean whatever the browser provides by default, and
+increase it by 120%.
+You can actually do a quick calculation and
+figure out what pixel size that would be.
+Most browsers have 16 pixels as default text size.
+So 120% of 16 would a little bit over 19 pixels. 
+em is a unit of measurement that is equivalent to the width of the letter
+m in this particular font that we're using. 
+When you specify them on subsequent elements,
+they don't have an overriding effect, they have a cumulative effect instead. 
+First it's a pretty common practice, that if you want to increase the font-size in the entire document, that you specify percentage and
+you apply it usually to the most parent tag, which is usually the body tag.
+And technically speaking, you could have continued to use percentages even here.
+So 2em really translates to 200%.
+However it's more common to use ems when you're talking about relative sizes
+within the documents itself. 
+I highly recommend you don't mix and match the percentage, ems and
+certainly not the absolute value units all over the place. 
+
+19 The Box Model
+In HTML every element is considered a box.
+Besides their content, each box consists of padding, border as well as margins.
+The box model refers to the components that make up an HTML box
+as well as the rules that govern how these box components affect the layout
+as well as how width and height of the box are calculated.
+padding, margin, border
+background-color
+width, height
+width è del contenuto; la larghezza del box è width + padding + border
+(box model W3C)
+in CSS3 c'è la proprietà box-sizing che, se impostata a border-box fa si che la larghezza totale del box sia quella specificata in width (come succedeva nel box-model di MS!!!)
+But the truth of the matter is, all the modern frameworks like Bootstrap and
+others use box, border box as its sizing mode,
+and as you plan and work with your layouts this is the same choice to make.
+So, make sure you always stay with a box sizing of border box.
+NB: ma box-sizing NON viene ereditata!
+-> per avere box-sizing: border-box in tutto il documento usiamo il selettore *:
+* {box-sizing: border-box;}
+Ma box-sizing si può usare in tutti i browser?
+Per vedere questo usare il sito www.caniuse.com
+margins that are left to right are cumulative
+in verticale the margins collapse, and the larger margin wins
+if you wanted to reset the CSS browser defaults
+if you would do this most of the time using the star selector
+Se fissiamo un'altezza troppo piccola il contenuto deborda. come si gestisce? Con	
+overflow
+Con overflow: auto compare, se serve, la barra di scorrimento.
+Per averla sempre visibile, impostare overflow: scroll
+
+20 The background Property
+background-color
+background-image (the URL that you supply is a relative variable, but
+it has to be relative to your CSS)
+background-repeat
+Also notice that we're using a background-color property and
+a background-image property at the same time.
+And you can see that image wins on terms of priority.
+It is on top of the color.
+background-position (specify the position of the image within the element. Now, specifying only one of these will make the other one default to center)
+
+21 Positioning Elements by Floating
+When you float elements, the browser takes them out of the regular document flow
+when it comes to floated elements, the margins never collapse.
+the browser should resume the regular document flow.
+And the way that we do that is by using the clear property.
+So let's go ahead and go to our styling and define section target and
+wel say, clear: left.
+And what this is doing is telling the browser that the section element is
+announcing that nothing should be allowed to be floating to the left of it. 
+(la section è quella nel codice di esempio)
+clear: left,
+so nothing should be allowed to flow to the left of it
+Okay, so let's go ahead and try to achieve that two column layout design. 
+Floats are taken out of their normal document flow, and
+they're positioned at the top left or right edge of the containing element.
+Also, floats don't have vertical margin collapse, so
+previously hidden or collapsed margins will show up once you float the element.
+And remember that to resume normal document flow, use the clear property.
+
+22 Relative and Absolute Element Positioning (+ Static)
+Static positioning is basically a different way of saying normal
+document flow.
+It is actually a default setting for all elements, except html.
+And if you try to apply positioning offsets on elements
+who's position property is set to static, the offsets are just ignored. 
+Let's speak about a couple more positioning schemes: relative and absolute.
+These positioning schemes allow you to specify precise offsets to move
+the target element to the different part of the page origin. 
+When you apply position relative on an element.
+the element is positioned relative to its position in the normal document flow.
+In other words, if you were to apply offsets on that element, there will be
+offset, from the original normal document flow position of that element. 
+The positioning CSS offset properties are top, bottom, left, and right.
+So when you position element as relative you're basically creating like an anchor
+for the offsets.
+So the elements top, bottom, left, and right edges become the boundaries from which you offset the element. 
+The important thing to know about relative position is that the element
+that is set to relative positioning is not taken out of normal document flow.
+In fact even if it's moved by using the offsets, its original spot is preserved.
+In sostanza, l'elemento viene visualizzato spostato, ma viene "percepito" dagli altri elementi come se fosse nella sua posizione normale. 
+So the way you could think about these offsets is really not top or
+left but more like from the top and from left. 
+So if you take from left 50 pixels, you move 50 pixels to the right, and
+if you take from top 50 pixels, you're really removing 50 pixels from the top. 
+The original space for that element still remains and the originally laid out
+elements around that element still remain exactly the same,
+because they think the element is still sitting in its original spot. 
+Now the idea of absolute positioning is that all offsets, top, bottom, left,
+right, are all relative to the position of the nearest ancestor
+which has positioning set on it other than static.
+In other words, some parent, grandparent, on and on and
+on, ancestor has to have its positioning set other than static, and
+then the absolute positioning will actually start working.
+By default, HTML element is the only element that has non-static positioning set on it. And it's actually set to relative.
+Unlike relative positioning, the element is taken out
+out of its normal document flow if it's positioning a set to absolute. 
+Gli offset di un elemento con posizionamento absolute sono relativi all'antenato più vicino (es. il padre) che abbia posizionamento diverso da static.
+
+23 Media Queries
+Media queries allow you to group styles together and target them to devices based on some criteria.
+For example, you can target a device by its width, its height, or orientation.
+Of course one of the most obvious differences between viewing
+a website on a desktop browser and your cell phone is the screen size.
+Remember that using CSS you have the power to produce very different web page layouts from the same HTML. 
+Without media queries, responsive design wouldn't be possible. 
+A media query starts with a keyword @media, and
+then it is followed by a media feature, and followed by curly braces.
+Within those curly braces you have your styles.
+Each media feature resolves to either true or false.
+You can have more than one media features combine together using logical operators.
+If the media features resolve to true, the style within the curly braces apply. 
+There are quite a bit of these media features that are available.
+So you can have max-width, you can have min-width, you can have height which is
+not listed here, you can even target orientation of your device, portrait or
+landscape, you can target only screens as opposed to targeting only print.
+the most common ones are the max-width and the min-width.
+
+the media features can be combined using logical operators.
+One of the most common logical operators is the and operator.
+Another way to combine media features is to place comma in between them which will basically translate into being equivalent to an OR operator.
+when you approach responsive design and
+responsive layouts, the most common logical operator is the and operator. 
+Now before we jump into a code example I'd like to show you a very common approach
+how you structure media queries within your style sheet.
+What usually happens is you have a few of these media queries, but
+you almost always start with some base styles.
+Base styles will apply across the board no matter what screen size
+you actually are viewing the website on.
+Then you go ahead and start targeting a particular screen size
+by either changing some of the properties of the base styles or
+adding something else to them or maybe taking something away. 
+
+24 Responsive Design
+Responsive design was born primarily out of the need to deal
+with the explosion of mobile devices that started being able to
+browse the web much in the same way that a desktop browser user browsed the web. 
+Gli smartphone hanno schermi più piccoli, e quindi bisogna adattare il sito alle varie dimensioni degli schermi.
+So what is a responsive web site?
+Well, that's a site that's designed to adapt its layout to the viewing
+environment by using fluid, proportion-based grids,
+flexible images, and CSS3 media queries.
+And by proportion-based grids, what we mean is or
+hinting to Is that the width of these grids or
+these columns as we'll see in a moment should be specified using a percentage. 
+The largest part of responsive design is, obviously, the layout.
+And the most common layout out there or responsive layout, is a 12-column grid
+responsive layout and this is what, a bootstrap, Twitter Bootstrap uses and
+just about almost really every responsive framework out there uses nowadays.
+And, the reason 12 is what's used is because of the factors of 12.
+You could basically, t's evenly, nicely divisible by 1, 2, 3, 4, 6, and
+obviously 12 itself, which means, we could sub-divide our
+page into sections that are evenly split and nicely layout themselves.
+Impostazione "manuale" di una pagina con responsive design
+- si informa il browser dei telefonini di non zoomare (il nostro sito ha un responsive design, e quindi non deve essere zoomato - verrebbe rimpicciolito):
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+- tutte le larghezze devono essere date in percentuale, per adattarsi alla larghezza della finestra
+- si dichiara la "riga" che conterrà gli elementi del nostro responsive design:
+  width: 100% (la riga occupa tutto lo spazio del suo contenitore)
+- tramite le media query (una per ogni tipo di larghezza che vogliamo gestire) si definiscono le caratteristiche delle colonne lungo le quali si disporranno gli elementi del layout:
+  - nomi del tipo col-lg... e col-md... 
+    (no small, perché è il default)
+  - float: left; width: ...;
+- struttura html_
+  - <div class="row">
+      <div class="col-lg... col-md...> ... </div>
+	  per varie volte (per via delle media query SOLO  UNA delle classi esisterà - e quindi sarà applicata - in funzione delle caratteristiche del device nel quale viene visualizzata la pagina)
+	  Poiché le classi "col---" sono float, a seconda delle loro larghezze si disporranno in fila nella riga per un certo numero di colonne, e poi andranno a capo. Poiché la loro larghezza dipenda dalle media query, il numero di box in riga varierà a seconda dell'effettiva dimensione della finestra del browser. Quando lo schermo è piccolo (la nostra condizione di default) non abbiamo messo media query (quindi classi tipo col-lg e col-md NON esistono) i nostri div non saranno più float, e poiché sono elementi di blocco si impileranno automaticamente uno sotto l'altro (e quindi avrò un layout a 1 colonna).
+
+25 Introduction to Twitter Bootstrap
+Bootstrap is a CSS framework.
+Bootstrap è basato su jQuery.
+Bootstrap is the most popular HTML, CSS, and JavaScript framework for
+developing responsive, mobile first projects on the web. 
+Bootstrap consists mostly of CSS.
+It pre-defines a lot of CSS classes for you. 
+Bootstrap grid system (totale larghezze delle colonne = 12)-
+The concept of Mobile First, that is, the importance of
+planning for the mobile version of your website from the very beginning. 
+Per usare Bootstrap conviene preparare un modello di pagina html5 con il meta "viewport" e i riferimenti per includere (da locale o da cdn) i file bootstrap.min.css, e nell'ordine jquery.min.js, popper.min.js e bootstrap.min.js.
+Le media query sono già implementate in bootstrap.min.css
+First of all, your Bootstrap grid always has to be inside of a container wrapper.
+The next component of the grid is the row.
+So the row class creates horizontal groups of columns
+which means that the columns collapse and interact with each other as a group but
+independently from columns in another row. 
+Let's move on to the columns.
+So every Bootstrap column class is defined using this template.
+It's c o l, col, for column dash SIZE and then dash SPAN.
+And let's go over the components of this, of the two components of this template.
+First of all the size.
+Well the size is screen width range identifier and
+it's something like MD for medium, LG for large, and so on.
+And the span, is really, all it is is how many columns the element should span.
+So the values are from 1 to 12.
+And I've mentioned many times that Bootstrap is a 12 column grid layout. 
+Nel body il div principale è <div class="container-fluid"> (oppure "container")
+Nelle varie "row" mettere gli schemi delle colonne in modo che, per ogni classe grid considerata (tra xs, sm, md, lg) il totale delle "larghezze" faccia 12. Ad es:
+<div class="col-sm-3 col-md-6 col-lg-4">bla bla</div>
+<div class="col-sm-9 col-md-6 col-lg-8">bla bla bla</div>
+(sm-3 + sm-9 = 12;   md-6 + md-6 = 12)
+Gli elementi che costituiscono le colonne del responsive design devono avere classi multiple che vengono attivate in modo mutuamente esclusivo tramite media query che tengono conto delle caratteristiche (es tipo, larghezza) del dispositivo o del(la finestra del) browser nel quale viene visualizzata la pagina.
+
+
+
+
+
+

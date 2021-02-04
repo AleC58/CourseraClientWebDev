@@ -1,0 +1,197 @@
+Module 1 Quiz
+Total points 23
+Question 1
+If I miss an assignment deadline or fail an assignment, I fail the course.
+True
+
+x False
+
+Question 2
+This is a completely self-paced course. The deadlines don't matter at all!
+True
+
+x False
+
+Question 3
+I can go through the course faster and complete it faster!
+x True
+
+False
+
+Question 4
+Where can you get access to the example source code used in the course and the Lecture Slide PDFs?
+You CAN NOT have it! It's reserved only for special people. VERY special people! You can ask and beg on the discussion forums, but we still won't give it to you.
+
+x The link to the GitHub.com repository, which contains the example code used in this course, Lecture Slide PDFs, as well as assignment starter code is given to you in the first module under the title "ALL of the EXAMPLE SOURCE CODE for this Course".
+
+Question 5
+In order to install Browser Sync, what must be installed first?
+Javascript
+
+Google Chrome Developer Tools
+
+Ruby
+
+x NodeJs
+
+Java
+
+Question 6
+The core purpose of HTML is to
+(hint: something a pure text file with content won't be able to accomplish)
+Display web page content to the user
+
+x Communicate the structure of the content
+
+Tell the browser how to position and align content in the browser window
+
+Tell the browser what should happen once the page is loaded
+
+Question 7
+W3C (World Wide Web Consortium) is the only organization that dictates what and how browsers should implement HTML5
+True
+
+x False
+
+Question 8
+ALL HTML5 tags must
+x Have an opening tag
+
+Have a closing tag
+
+Have at least 1 attribute
+
+Be lower case, i.e., 
+
+1
+
+not
+
+1
+
+Have an 'id' attribute
+
+Question 9
+Identify correct HTML5 page declaration(s)
+1
+
+x 1
+
+1
+
+x 1
+
+1
+
+x 1
+
+
+Question 10
+What would happen if you didn't specify the HTML5 declaration?
+Nothing. HTML5 is very liberal about its declaration and it's only a recommendation to use it
+
+The browser will revert to the previous version of HTML automatically
+
+x The page will be interpreted in quirks mode
+
+The page will not display at all
+
+How should I know? I didn't really watch the videos!
+
+Question 11
+Browsers ALWAYS interpret HTML sequentially, top to bottom
+x True
+
+False
+
+Question 12
+Identify invalid HTML code snippet below (assume code around it, i.e., declaration, etc. is valid)
+1
+x 2
+3
+4
+
+Question 13
+Meta tags communicate information about the browser to the server
+True
+
+x False
+
+Question 14
+Without applying any additional styles, the following code snippet will show up in the browser as how many lines of text? (Assume the browser is stretched wide enough not to cause any single line to wrap)
+
+in 4 righe
+
+Question 15
+Identify invalid HTML code snippet (assume code above and below this code is valid)
+1
+
+x 1
+
+1
+
+All are valid!
+
+Question 16
+Semantic HTML tags
+x May help the SEO ranking of the page
+
+x Help computers better understand the structure of the page
+
+x Help humans better understand the structure of the page
+
+Are required to be used in HTML5
+
+17.
+One purpose of HTML Character Entity References is
+x To allow the browser to display certain characters it would otherwise interpret as part of HTML code and not something to display to the user
+
+HTML Character Entity References were useful before HTML5 was introduced. After HTML5, they are no longer needed
+
+Identify character sets that the browser can support
+
+Question 18
+Using only HTML, how would you make sure that 3 words in an HTML document ALWAYS appear together on 1 line, even if the text word-wraps because the browser window is too narrow for that text line? 
+Impossible to accomplish with HTML alone!
+
+Place &nowrap; entity reference before the 1st word and after the 3rd word
+
+Px lace &nbsp; entity reference after the 1st word and after the 2nd word (with no spaces in between words and entity references)
+
+Place &nbsp; entity reference before the 1st word and after the 3rd word
+
+Question 19
+How can you force the browser to open a link in a new window or tab?
+Send some special meta tags as part of the page
+
+Instruct the user to right-click on the link and choose "Open in a New Tab"
+
+x Include target='_blank' attribute as part of the <a> tag
+
+Include target="new" attribute as part of the <a> tag
+
+Question 20
+The following code rendering in the middle section of the page allows someone to directly link to that middle section of the page, not just the beginning of the page:
+x True
+
+False
+
+Question 21
+Even though the width and height attributes of the 'img' tag are not required, it's always a good idea to use them
+x True
+
+False
+
+Question 22
+WHATWG does NOT version HTML. For them, it's NOT HTML5. It's just HTML.
+x True
+
+False
+
+Question 23
+Quirks Mode is when the browser
+Can become unstable and crash in the middle of rendering a web page
+
+x Assumes that the HTML in the web page is NOT following the HTML standard, i.e., not in standards mode. That will cause styles not to work correctly, etc.
+
+This is a made up term. No such thing
