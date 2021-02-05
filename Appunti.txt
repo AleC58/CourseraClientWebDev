@@ -1,7 +1,7 @@
 Link ai materiali del corso:
 https://github.com/ITIS-Zuccante/fullstack-course4
 
-Creazione sito in GitHub
+Creazione sito in GitHub (VA AGGIORNATO)
 Si sfruttano le GitHub pages:
 - dal sito GitHub, nella pagina del repository click su (ingranaggio) Settings
   - scorrere in basso fino a GitHub Pages e creare le pagine accettando i default;
@@ -564,6 +564,10 @@ The concept of Mobile First, that is, the importance of
 planning for the mobile version of your website from the very beginning. 
 Per usare Bootstrap conviene preparare un modello di pagina html5 con il meta "viewport" e i riferimenti per includere (da locale o da cdn) i file bootstrap.min.css, e nell'ordine jquery.min.js, popper.min.js e bootstrap.min.js.
 Le media query sono già implementate in bootstrap.min.css
+
+26 The Bootstrap Grid System
+one of the most central components of Bootstrap that allows developers to easily
+create responsive layouts is the grid system. 
 First of all, your Bootstrap grid always has to be inside of a container wrapper.
 The next component of the grid is the row.
 So the row class creates horizontal groups of columns
@@ -585,6 +589,130 @@ Nelle varie "row" mettere gli schemi delle colonne in modo che, per ogni classe 
 <div class="col-sm-9 col-md-6 col-lg-8">bla bla bla</div>
 (sm-3 + sm-9 = 12;   md-6 + md-6 = 12)
 Gli elementi che costituiscono le colonne del responsive design devono avere classi multiple che vengono attivate in modo mutuamente esclusivo tramite media query che tengono conto delle caratteristiche (es tipo, larghezza) del dispositivo o del(la finestra del) browser nel quale viene visualizzata la pagina.
+Info molto buone sui breakpoint e in generale sul "grid system" di Bootstrap in https://getbootstrap.com/docs/4.0/layout/grid/
+o in https://getbootstrap.com/docs/5.0/layout/grid/
+Which means that if you want to guarantee that there is always going to be
+a particular layout, you could just specify it in the col-xs and it will stay.
+No matter what the size of the screen, that's the layout that will stay. 
+
+27: Visit with the Client
+Now before we go and visit with the client, let's go over some rules and
+just basic ideas, so you're not completely in the dark.
+Now obviously, this is not going to be a comprehensive business strategies or
+comprehensive how to deal with clients, but some basic ground rules just so
+we understand where we're coming from.
+And the first concept that you need to remember is that most clients have
+no idea what they want.
+So, it's really your job to ask questions.
+And most importantly, the right questions to help the client figure
+out what it is that they want and kind of communicate that back to you. 
+A great way of doing it is if you bring some website examples of similar
+businesses that already have websites and have the client react to those websites. 
+Now as a general rule,
+every single client is going to want to put a lot of information on the page.
+The only problem is, is that when everything is important,
+nothing is really important.
+So again,
+it's your job really to encourage the client to follow a very simple rule.
+Less is more.
+The less information you put up, the more impact that information will get. 
+you should try to help the client do is identify the crucial
+information,
+Now, a quick tip I'd love to share with you is the fact that you
+should always try to find a way for the client to invest in the project and this
+is especially true if you're doing this for free just to build up your portfolio.
+The client needs to feel like they have some skin in the game, as well.
+If they don't, what's going to end up happening is that you're going to be some
+side project that they're really not going to pay much attention to and
+you're going to spend and invest all this time of your own and
+not necessarily get much cooperation from their side. 
+Another important rule is make sure that you have the client designate one person
+responsible for decisions.
+If you don't, what's going to happen is that this person is going to tell you,
+really what we want is this way and the other person in the business is going
+to tell you we want something else differently here.
+If you have one person, you could always tell the other people that are suggesting
+things that it's a great suggestion and I am responsible to this particular
+one person and I'll bring that suggestion to that person. 
+Limit the number of revisions UPFRONT.
+Make sure you communicate to the client upfront, have them even sign a contract,
+have them sign that this is the number of revisions that I'm willing to make.
+Because obviously, the clients can go on forever and
+ever and ever and your time is limited. Now if it's a paying job, don't limit revisions out of hand,
+but limit the number of free revisions.
+If you say, I will revise the site within reason not completely turn it upside down.
+But within reason, I'll revise it up to like three times free. 
+I highly suggest you Google web development client questionnaire and
+you will see a whole bunch of resources that you can draw from to really find out
+how to ask these questions and what kind of answers to look for
+Another quick tip I'd like to share with you is you should try to involve others if
+you need it.
+So for example, if you're not a super duper graphic designer and
+we're really concentrating on coding things not really designing per se,
+you could contact the local college and see if a graphic designer student wants to
+join you and provide some free design services and put that on their resume. 
+I will still have the restaurant owner invest in this project.
+And the way they will invest is that they agree to provide every single item on
+the menu to provide for us just, so we could take proper pictures of those items. 
+So it's hours and hours of their work, but it's something that shows the client
+is involved and the client is committed and that's very important. 
+Now, another thing is definitely don't go in to the meeting with the client without
+first finding out what does the client have right now.
+What kind of website do we have they have?
+What information is being displayed?
+Just to learn a little bit about the business. 
+
+When you get right down to it, this really is all about setting expectations.
+Whether it's expectations about what the client is expecting from us or
+our expectations of what the client is going to provide.
+So, if we can achieve that of communicating those expectations very
+clearly, we've done our job. 
+Basically, we're going to create a mockup of the website, not the real website.
+So just a mock-up, a drawing of the website.
+And we're going to show it to you and
+basically see if you approve of the way it's going.
+And we'll give you three revisions, three times
+that you can update the thing and say, I want something different a little bit.
+And after that, you'll try to finalize it.
+Are you okay with that? 
+So pictures that have usually, especially, a website like this is very important. 
+
+28 Design Overview
+So when you're first starting to design a website,
+the worst thing you could possibly do is start coding right away.
+You don't want to do that.
+You don't want to design a website coding it at the same time.
+What you do want to do is you want to have some mock ups, some layout mock ups,
+that you present to the client that take little to no time to design and
+to put together and present to the client.
+So what we're going to do is design the mock ups first.
+So the tool we're going to use is called balsamiq.com
+This tool is not free
+Now, this big area, what's planned for
+this is some kind of a picture of the inside of the restaurant.
+It's going to be what's called a jumbotron In Bootstrap. 
+Next, let's take a look at some design that has already some colors and
+some more concrete layout.
+So here's what our designer came up with.
+This is just a basic idea,
+this is what you are usually going to get back from a designer.
+You're going to get some kind of a color scheme.
+Some photography.
+And the photography is not from this particular restaurant.
+It's just some stock photography that you can certainly use
+in order to kind of enhance the site to see what it looks like. 
+Designer will typically provide for you the hexodus more color values for
+different components within your website, and
+it will also tell you which fonts that they used inside this design.
+Now depending on your budget and if you're trying to do things for free or
+certainly trying to find free resources,
+I'll recommend the prompt that you try to stick with Google fonts.
+There's a website Google.com/fonts. 
+
+29 Some Ground Rules and Overview of Setup
+So the first thing we want to do here is set up some global styles that the entire
+page, and really, across all pages, will be true.
+So we'll do that using body. 
 
 
 
