@@ -1,6 +1,12 @@
 Link ai materiali del corso:
 https://github.com/ITIS-Zuccante/fullstack-course4
 
+Link alla versione finale del progetto:
+https://jhu-ep-coursera.github.io/fullstack-course4/examples/Lecture63/after/
+
+La versione online, fatta con Angular, è all'url:
+https://www.davidchuschinabistro.com/
+
 Creazione sito in GitHub (VA AGGIORNATO)
 Si sfruttano le GitHub pages:
 - dal sito GitHub, nella pagina del repository click su (ingranaggio) Settings
@@ -710,9 +716,161 @@ I'll recommend the prompt that you try to stick with Google fonts.
 There's a website Google.com/fonts. 
 
 29 Some Ground Rules and Overview of Setup
-So the first thing we want to do here is set up some global styles that the entire
-page, and really, across all pages, will be true.
+So the first thing we want to do here is set up some global styles that the entire page, and really, across all pages, will be true.
 So we'll do that using body. 
+Google fonts: https://www.google.com/fonts
+Fare click sul font desiderato (lo si può anche cercare per nome) e nella pagina successiva fare click su "+ Select this style"
+Appare a dx una finestra, nella quale si può copiare il codice da inserire nel file html per usare il font (NB: se si chiude la finestra, per tiaprirla fare click sul pulsantino con i 3 quadrati e il più, dopo "Download Family").
+
+30 Coding Basics of Navbar Header
+there is a semantic HTML5 tag called header.
+So the first thing that we're going to do is create our nav bar.
+Basically, the navigation bar.
+And this is going to be done by the nav element, and
+we're going to give it an ID called header nav.
+And we'll see in a minute why we're going to need that.
+And we're going to give it some classes that Bootstrap provides for us.
+And it's going to be two classes.
+One is navbar.
+Another one is navbar default. 
+Now Bootstrap does this a lot.
+It will give you like a base class, and it will give you then a sub
+class that basically uses the base class, plus add something to it.
+So there's navbar default, there's navbar invert.
+There's different classes that really share some of the properties of
+the navbar, so you should really just get used to that
+and
+remember there's two types of containers.
+There's a container dash fluid, and
+that's the one that stretches all the way to the edges of the browser.
+And it has a bit of a padding on both sides,
+about 15 pixels of padding on both sides.
+And then there's the regular container that actually changes its width
+based on the width of the browser.
+And basically our entire content of our website is going to sit inside of that
+container or at least be aligned with this container.
+This is going to be our header container, and
+we're going to have another one that's going to be for the main content.
+And the reason we're doing this instead of using container fluid
+is because our website doesn't have that much information on it.
+If it doesn't so many different things going on here.
+So if we were to let the content stretch and
+reposition itself all the way to the widest point,
+the width of the browser, this website would look a little bit weird.
+go ahead and
+try to place our logo in the top left of that header element.
+it has a class called navbar header.
+And basically if you look up the Bootstrap documentation,
+it's kind of a wrapper class that a lot of
+other classes will depend on being in this position in order to work properly. 
+So how did I know to put navbar header here and wrap some items in it?
+Well the way I knew it is to go to documentation. 
+logo-img è un div (e non una img) perché l'immagine la mettiamo come background via css.
+And the way you do it in a boot strap is you apply.
+In this case to this region right here which is our logo, and
+we'll apply a class called pull-left.
+And pull-left is basically float left. NB: in Bootstrap 5 la classe è float-start!
+we don't always want to display this logo as we squeeze
+the browser
+Okay so if we go to index.html there are a couple of classes that bootstrap defines
+that let's you basically say that this element should only be visible in
+a particular break point and they're called visible, visible-md and
+what I'm saying is if the screen size is medium I want this element,
+this a href element to be visible but if it's anything other than,
+at this point, a medium-sized screen, I don't want this element to be displayed. 
+NB: in Bootstrap 5 visible-md diventa d-none d-lg-block
+
+31 Coding Button for Future Collapsible Menu
+Componente navbar:
+https://getbootstrap.com/docs/5.0/components/navbar/
+https://www.byte-post.com/barra-di-navigazione-navbar-bootstrap/
+Classe collapse: 
+https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp
+https://getbootstrap.com/docs/5.0/components/collapse/
+Fix per l'hamburger button non visibile:
+https://www.drupal.org/project/bootstrap_barrio/issues/3155464
+
+32 Coding Nav Menu Buttons
+il riferimento della classe data-bs-target del button indica al plugin js qual è l'area da collassare.
+Il menu è una ul. And we're going to give it a few classes.
+One is nav, navbar-nav, and navbar-right (in BS 5 navbar-right -> navbar-end).
+Well nav and navbar-nav is basically saying that
+I am going to be a component of our navigation bar or navigation. 
+So this is navbar-right means I want to still have a navigation bar, but
+I want it to be pulled to right. I want it to float all the way to the right.
+Le voci del nemu sono tag li con dentro tag a.
+
+a special couple of classes: Glyphicon, glyphicon-cutlery.
+And what these classes do is they're able to bring in what's called an icon font.
+An icon font is basically a vector based image that is able to
+behave in the same way that that the font would behave.
+In other words you could size it, you could colorize it, give it a color,
+
+NB: le icone Glyphicon NON SONO PIU' DISPONOBILI dalla vers. 4 di Bootstrap!
+Usare le icone sviluppate da Bootstrap:
+https://icons.getbootstrap.com/
+
+Altre possibilità:
+Font Awesome: https://fontawesome.com/
+
+Also notice, we're putting a break between the actual icon and the word menu.
+But we're not just putting a break, we're putting a class on it and
+we're saying hidden-xs (in BS 5 è d-none d-sm-block) which means I want this break to go away when the screen size is extra small.
+And there are a couple of things here.
+Number one is I'm telling you tel with a colon and the phone number and
+what's that going to do is if actually somebody clicks on it or taps on it
+they will trigger the phone to try to call it, so let's say you have calling
+program installed on your computer in the regular desktop, they'll trigger that.
+Or if you're on a mobile phone, this type of set-up will trigger the phone to try to call or use its phone feature to call:
+href="tel:410-602-5008" -> lo smartphone chiama il numero.
+ 
+33 Fixing Navbar Layout, Text, and Dropdown Menus
+And the font size is something we haven't really seen in this type of unit before. It's 5vw.
+What is vw stand for?
+Well vw stands for viewport width and one unit, so
+if you let me create a little note here as one unit of vw,
+vw is equals to 1% of viewport Width. 
+And the reason we're using these units is because these units are responsive.
+In other words as the screen keeps stretching and being squeezed
+this is going to be, the font size is going to be relative to the screen width. 
+
+Lecture 34 Coding the Jumbotron
+And what we're going to start with is this giant picture of the restaurant,
+of the interior of the restaurant, which is actually what's called the Jumbotron in bootstrap speak.
+However before we start, we're going to have to define some element that is going
+to be a container for everything that is inside of our website.
+And that's simply because remember, we put in the container our header and
+we want everything nicely aligned to its edges.
+So we need a top level element within our main content
+to have a container class assigned to it.
+Well the way we're going to code our Jumbotron is we have a whole bunch of
+images in the Images folder.
+As you can see, jumbotron, they all are sized very differently.
+The first one is 768, that one is 768 pixels wide.
+Then there's jumbotron 992.
+That one is 992 pixels wide, and finally the 1200 one is the biggest one there.
+And obviously what we want from this is, to be able to substitute different
+pictures, different resolutions, depending on the screen size. 
+And what's going to happen is we're going to assign a background CSS property
+to this DIV and it's going to load the image responsively.
+Meaning depending on the media query it's going to appear and
+is going to load different size image.
+The classes, the class IMG responsive comes from Bootstrap.
+And basically what it says is, as I change the width of the browser, the width and the sizing of the image is going to change proportionally. 
+And also I'm only going to make this visible when the screen is extra small.
+Okay so let's go back to our code editor and we'll open up our styles.css file and we'll load our jumbotron images in this proper media query.
+And we're setting it's height because as you know background images don't effect
+the height of the element, so therefore we need to set the height. 
+
+Lecture 35 Coding Navigation Tiles
+
+
+
+
+
+
+
+
 
 
 

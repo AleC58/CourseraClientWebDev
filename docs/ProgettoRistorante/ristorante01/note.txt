@@ -1,0 +1,8 @@
+Corrisponde a 30 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture30/after)
+
+Versione iniziale con schema di base
+e header con logo e nome ristorante
+
+float con float-start
+hide con d-none d-lg-block
