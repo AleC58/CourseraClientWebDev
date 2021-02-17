@@ -1,0 +1,3 @@
+Versione 2
+Menu collassabile - versione base
+vedi https://getbootstrap.com/docs/5.0/components/navbar/

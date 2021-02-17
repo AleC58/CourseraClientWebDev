@@ -1,8 +1,39 @@
-Corrisponde a 30 after
-(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture30/after)
+Versione 1
+Corrisponde a 33 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture33/after)
 
-Versione iniziale con schema di base
-e header con logo e nome ristorante
+Schema di base
+e header (logo, nome ristorante e scritta "Kosher certified" e menu)
 
-float con float-start
-hide con d-none d-lg-block
+- inserimento navbar base
+- sfondo giallo alla navbar
+- (float con float-start)
+- Google fonts
+- sistema il contenuto del secondo navbar-brand
+- menu collassabile (vedi vedi https://getbootstrap.com/docs/5.0/components/navbar/):
+  - il menu è espanso da lg in avanti, per schermi più piccoli collassa:
+    <nav id="header-nav" class="navbar navbar-expand-lg">
+  - tutto il menu è in un container (.container vs .container-fluid: il primo è centrato e cambia la sua larghezza in base alla larghezza del browser, il secondo occupa sempre tutta la larghezza del browser, con un padding a sx e a dx di 15px)
+  - il logo / nome della ditta va in un elemento .navbar-brand (anzi, sono 2: BOH: sono affiancati come se ci fosse un float, ma sono block!!!)
+  - logo come background di un div dentro un tag "a" di classe navbar-brand; il logo è nascosto su schermi medi e piccoli (con d-none d-lg-block, ovvero l'elemento è visibile solo da lg in avanti)
+  - nome ristorante (come h1 perché è la cosa più importante della pagina), stella e scritta "Koscher ..." in altro navbar-brand
+  - button: è l'hamburger button (quello con le tre linee orizz.)
+    - class="navbar-toggler" per la formattazione
+	- data-bs-toggle="collapse" è un plugin di Bootstrap che gestisce il collasso/espansione del menu
+	- data-bs-target="#rif" indica il riferimento (tramite div id = "rif") dell'elemento che contiene il menu da collassare/espandere
+    - navbar-toggler-icon è l'hamburger icon. NB: l'icona si vede solo se si usano le classi per lo schema colori (.navbar-light o .navbar-dark). Se tali classi non vengono usate bisogna inserire nel proprio css il seguente codice:
+      - .navbar-toggler-icon { /* per sfondo chiaro*/
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+	  oppure:
+      - .navbar-toggler-icon { /* per sfondo scuro*/
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28f, f, f, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");}
+  - menu, in genere un <div id="rif" class="collapse navbar-collapse"> che contiene una <ul class="navbar-nav ms-auto"> con le voci del menu
+  - icone (swg icon fonts"): dalla versione 5, Bootstrap usa le sue. Si mettono con le classi "bi" e "bi-NOME (es: "bi bi-circle-fill"), e bisogna "importarle" mettendo nell'<head> il seguente link_
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	 In https://getbootstrap.com/docs/5.0/extend/icons/ ci sono riferimenti ad altri icon font (es. https://material.io/resources/icons/)
+  - l'icona è divisa dal testo, che va a capo con <br>; ma per scermi molto piccoli è meglio avere tutto in linea per risparmiare spazio: <br class="d-none d-sm-block"> fa si che il br ci sia solo da sm in su.
+  - telefono: con <a href="tel:410-602-5008"> il telefono chiama il numero, o il pc chiede al telefono di chiamare; l'elemento viene nascosto su schermi  medio piccoli (<li id="phone" class="d-none d-lg-block"> -> mostra solo da lg in su) per riorganizzare il layout (in quel caso vogliamo il numero di telefono in alto e bene in vista)
+  - stilizza #nav-list
+  - ridurre il logo su schermi md: con le media query si cambia il file e si stilizza opportunamente
+  - nuove unità: vw (viewport width): 1vw = 1% di viewport width (And the reason we're using these units is because these units are responsive. In other words as the screen keeps stretching and being squeezed this is going to be, the font size is going to be relative to the screen width.)
+  

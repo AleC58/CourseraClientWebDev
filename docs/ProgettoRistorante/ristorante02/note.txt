@@ -1,3 +1,4 @@
 Versione 2
-Menu collassabile - versione base
-vedi https://getbootstrap.com/docs/5.0/components/navbar/
+Corrisponde a nn after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecturenn/after)
+

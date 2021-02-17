@@ -16,7 +16,7 @@ Si sfruttano le GitHub pages:
 	In GitHub Desktop ho reso attivo il branch gh-pages (serve?)
   - nella dir radice (locale) del repository creare una dir (es. "Site") e in
     questa dir creare index.html: il file si vedrà in Internet
-	all'url https://alec58.github.io/Coursera-test/site/
+	all'url https://alec58.github.io/CourseraClientWebDev/site/
 	... e in "site" si può fare il resto del sito
 	
 browser-sync
@@ -732,34 +732,31 @@ And we'll see in a minute why we're going to need that.
 And we're going to give it some classes that Bootstrap provides for us.
 And it's going to be two classes.
 One is navbar.
-Another one is navbar default. 
+Another one is navbar-default (serve per i colori). 
 Now Bootstrap does this a lot.
 It will give you like a base class, and it will give you then a sub
 class that basically uses the base class, plus add something to it.
-So there's navbar default, there's navbar invert.
+So there's navbar-default, there's navbar-invert (a sfondo nero).
 There's different classes that really share some of the properties of
 the navbar, so you should really just get used to that
-and
-remember there's two types of containers.
-There's a container dash fluid, and
+and remember there's two types of containers.
+There's a container-fluid, and
 that's the one that stretches all the way to the edges of the browser.
-And it has a bit of a padding on both sides,
-about 15 pixels of padding on both sides.
+And it has about 15 pixels of padding on both sides.
 And then there's the regular container that actually changes its width
 based on the width of the browser.
 And basically our entire content of our website is going to sit inside of that
 container or at least be aligned with this container.
 This is going to be our header container, and
 we're going to have another one that's going to be for the main content.
-And the reason we're doing this instead of using container fluid
+And the reason we're doing this instead of using container-fluid
 is because our website doesn't have that much information on it.
 If it doesn't so many different things going on here.
 So if we were to let the content stretch and
 reposition itself all the way to the widest point,
 the width of the browser, this website would look a little bit weird.
-go ahead and
-try to place our logo in the top left of that header element.
-it has a class called navbar header.
+go ahead and try to place our logo in the top left of that header element.
+it has a class called navbar-header.
 And basically if you look up the Bootstrap documentation,
 it's kind of a wrapper class that a lot of
 other classes will depend on being in this position in order to work properly. 

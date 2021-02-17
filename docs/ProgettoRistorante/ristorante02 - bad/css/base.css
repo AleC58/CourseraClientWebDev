@@ -1,0 +1,55 @@
+body {
+	font-size: 16px;
+	color: #fff;
+	background-color: #61122f;
+	font-family: Oxigen, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+#header-nav {
+	background-color: #f6b319;
+	border-radius: 0;
+	border: 0;
+}
+
+#logo-img {
+	background: url("../images/restaurant-logo_large.png") no-repeat;
+	width: 150px;
+	height: 150px;
+	margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+	padding-top: 25px;
+}
+
+.navbar-brand p { /* Kosher certif. */
+	color: #000;
+	text-transform: uppercase;
+	font-size: .7em;
+	margin-top: 25px;
+}
+
+.navbar-brand p span { /* Star-k */
+	vertical-align: middle;
+}
+
+.navbar-brand h1 { /* nome del ristorante */
+	font-family: 'Lora', serif;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #557c3e;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px #222;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: .75;
+	/*padding-top: 25px;*/
+}
+
+.navbar-toggler-icon { /* per sfondo chiaro*/
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
