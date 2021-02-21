@@ -1,2 +1,4 @@
 Versione 3
-Perfezionamento del menu, con particolare rferimento al suo aspetto.
+Corrisponde a nn after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecturenn/after)
+

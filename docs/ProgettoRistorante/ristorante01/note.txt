@@ -32,8 +32,8 @@ e header (logo, nome ristorante e scritta "Kosher certified" e menu)
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 	 In https://getbootstrap.com/docs/5.0/extend/icons/ ci sono riferimenti ad altri icon font (es. https://material.io/resources/icons/)
   - l'icona è divisa dal testo, che va a capo con <br>; ma per scermi molto piccoli è meglio avere tutto in linea per risparmiare spazio: <br class="d-none d-sm-block"> fa si che il br ci sia solo da sm in su.
-  - telefono: con <a href="tel:410-602-5008"> il telefono chiama il numero, o il pc chiede al telefono di chiamare; l'elemento viene nascosto su schermi  medio piccoli (<li id="phone" class="d-none d-lg-block"> -> mostra solo da lg in su) per riorganizzare il layout (in quel caso vogliamo il numero di telefono in alto e bene in vista)
+  - telefono: con <a href="tel:410-602-5008"> il telefono chiama il numero, o il pc chiede al telefono di chiamare; l'elemento viene nascosto su schermi  medio piccoli (<li id="phone" class="d-none d-lg-block"> -> mostra solo da lg in su) per riorganizzare il layout (in quel caso vogliamo il numero di telefono in alto e bene in vista: per far questo lo "duplichiamo" sotto l'header, facendo in modo che il duplicato sia visibile solo per schermi piccoli)
   - stilizza #nav-list
   - ridurre il logo su schermi md: con le media query si cambia il file e si stilizza opportunamente
   - nuove unità: vw (viewport width): 1vw = 1% di viewport width (And the reason we're using these units is because these units are responsive. In other words as the screen keeps stretching and being squeezed this is going to be, the font size is going to be relative to the screen width.)
-  
+  - 

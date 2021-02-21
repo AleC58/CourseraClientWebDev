@@ -1,4 +1,26 @@
 Versione 2
-Corrisponde a nn after
-(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecturenn/after)
+Corrisponde a 36 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture36/after)
 
+Creazione del contenuto principale della pagina.
+Iniziamo con la grande foto del ristorante ("jumbotron").
+(Dubbio: il jumbotron è la foto o il contenuto principale della pagina?)
+Creiamo un div con la stessa classe container del mnu, per avere il giusto allineamento.
+Vogliamo mettere immagini di differente grandezza in base alla dimensione del monitor (-> immagini responsive)
+Non usiamo img ma il background-image del div, che possiamo cambiare con le media query. Inoltre facciamo in modo che l'immagine si ridimensioni mentre cambiamo la dimensione del browser mettendo la classe img-fluid al div.
+Inoltre rendiamo l'immagine visibile solo su schermi xs e sm ("d-block d-md-none").
+
+Ora ci dedichiamo alle 3 caselle (Menu, Specials e Map).
+Continuiamo nel div "main-content", che è un "container", e quindi ci possiamo già inserire una "row".
+Vogliamo che da schermi larghi e fino a md le 3 caselle siano affiancate (col-md-4 + col-md-4 + col-md-4); su schermi sm vogliamo le prime 2 affiancate e la terza sotto (col-sm-6 + col-sm-6 + col-sm-12); su schermi xs le vogliamo incolonnate (col-xs-12 +col-xs-12 + col-xs-12).
+Vogliamo che le caselle siano dei link con immagini e testo; ci serve una struttura complessa. Dentro ogni tag a dobbiamo mettere un div (così gli possiamo dare una dimensione e un'immagine di sfondo) con dentro uno span con il testo, che viene posizionato in modo assoluto nel div (che dev'essere relative).
+La struttura va stilizzata (vedi commenti sul css).
+Come sempre, le immagini le mettiamo come sfondo di un div, in modo da poterle cambiare se serve con le media query per avere immagini responsive.
+Le immagini sono un po' più grandi dei div associati, e inoltre sono centrate (background-position: center): questo fa si che la pagina sia "maggiormente responsive": per piccoli ridimensionamenti il div rimane sempre coperto dall'immagine.
+La mappa: andare su G Maps e cercare l'idirizzo; aprire il menudi G Maps (il sandwich button a sx in alto) / Condividi o incorpora mappa  / Icorporare una mappa:
+  - / Inviare un link / Copia link permette di copiare nel codice (in href) il link all'indirizzo cercato in G Maps (meglio mettere  target="_blank" per aprirlo in un'altra finestra/scheda)
+  - / Incorporare una mappa / Copia HTML èermette di copiare nel codice il codice (è un iFrame) che ci mette in un contenitore (ad es. un div) la mappa vera e propria.
+Per dispositivi molto piccoli (es iPhone 4 o 5) ci sono problemi (le immagini dei tile sono larghe 360px e l'iPhone 5 è largo 320px): li risolviamo con altre media query.
+
+Footer.
+Usa uno schema responsive a 3 colonne fino a md, e poi impilato su schermi piccoli. Le celle contengono il componente "card" (https://getbootstrap.com/docs/4.0/components/card/)

@@ -860,6 +860,105 @@ And we're setting it's height because as you know background images don't effect
 the height of the element, so therefore we need to set the height. 
 
 Lecture 35 Coding Navigation Tiles
+(NB: spiege benissimo il posution relative e absolute!)
+And since the whole main content is already a container,
+then I don't have to provide another container.
+Remember that every Bootstrap grid has to be inside of a container or
+an element that is marked with a container class. 
+I do need to define a row
+For the desktop, we want md-4, md-4, and again, md-4, which means they add up to
+12, So at the medium screen and above, this will become a three tile type of layout-
+Moving on down at the small level, meaning at the smaller screen size, so
+it's column small, the first two are column small 6.
+So they'll take up half the screen.
+And the third one, if you take a look, is 12th.
+So when we are at the small screen size, the first two will take out
+half the screen each, and therefore will take one, basically, row.
+And the third tile will slide down kind of to the second row
+And finally, at the smallest level, at the extra small screen,
+we want every single one of those things to stack one upon the other.
+And therefore we're doing extra small 12. 
+So the way that's broken up is we have a link that is surrounding a div, and
+the div has an id menu-tile.
+And inside that div we have a span called menu.
+And the reason I'm breaking them out like that is because the div with an id
+menu-tile is going to be something we're actually going to size and
+make a particular square rectangle looking thing.
+And the menu span we're actually going to
+position absolutely within the div of the menu tile. 
+And the way we're going to achieve that is we're going to size this square
+right here and
+then make it relative, which means all i's children can now be positioned absolutely.
+And we're going to be very easily positioning them right at the bottom,
+without having to worry about this element's overall position on the screen.
+So it will be absolute, but it will be, at the same time,
+relative to the tile within which it's going to live. 
+And the reason we are going to define a target of _blank, is that if somebody
+clicks on this map I don't want them to forget about our restaurant website.
+So it will automatically either open a new window
+Their width each one is going to be a 100%.
+Well, I don't really mean 100% of the screen obviously.
+I mean a 100% of whatever their container element is going to be. 
+I want it to be as wide as this grid will allow me to be. 
+Well all of them are important, but this is the positioning part,
+position relative.
+So position relative, as you remember, will not actually move the style anywhere,
+but it will set up something like an anchor for
+the rest of the child elements of whatever these IDs are.
+So now I'll basically be able to position them absolutely within this element. 
+And also notice that I'm positioning it in the center of my container element.
+What that's going to give us is that as the container element, that tile,
+shrinks a little bit, since the main dish is still sitting in the center,
+we're still going to see quite a bit of it and eliminates the need for
+us to provide different sized images for different screen sizes. 
+So the first thing you see here is position: absolute.
+And that means we're going to be positioning these spans absolutely within
+the containing element, which is the menu-tile.
+Okay, so positioning absolutely,
+we need to bring them all the way to the bottom, let's go take a look.
+We need them all the way at the bottom right here.
+Well, that's very easy to accomplish.
+It's bottom 0, right 0.
+Well, that's easy.
+And we want the width to be 100, which means 100% of the containing
+element again, I want it to stretch all the way across the tile.
+Okay, text align: center, that's pretty simple. 
+Okay, next let's go ahead and embed the map right here into this map tile.
+The first thing we want to do is we want to go to maps.google.com and
+you want to search for the location that we need to map into that tile. 
+And so, in order to get the embedded map, so what you have to do is you have to go to this menu right here and go to share or embed map.
+And it's going to come with either a link or embedded map.
+and we need to past this iFrame right here in the middle of this div. 
+And the width, we actually need to be 100%.
+Because once again, the width is going to be defined by the grid,
+by the bootstrap grid, and we want the style to stretch as much as
+possible to the edges of that cell inside that grid. 
+We really don't want these borders to stretch all the way.
+We want them kind of to stay together with the picture.
+Otherwise the whole thing looks weird. 
+Let's go and open up our Chrome developer to see why.
+Well, there's actually a very quick and easy fix is to specify margin: auto for
+both the right and the left margin.
+And that only works if you actually size the element.
+So we'll go ahead and say margin, we'll give it a top of 0 and
+to the side of auto and to the bottom of 15 pixels. 
+So we really need two things.
+Number one, we need menu-tile, and we also need specials-tile.
+And both of those we want to give it a width of 360 pixels (come le dimensione dell'immagine) and margin of 0 auto and 15 pixels.
+So now when we save that and go back to our browser, we should reload that.
+
+Lecture 36 Coding the Footer
+Usa il tag semantico "footer".
+Per stilizzarlo usa la classe panel-footer, che in Bootstrap 5 è sostituita dal componente "card"
+Da Bootstrap (https://getbootstrap.com/docs/4.0/components/card/): "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards."
+Anche quì, come per le altre parti della pagina, si usa un div.container, in modo da mantenere l'allineamento.
+Poi in una .row ci mettiamo tre section.col-md-4 per avere 3 blocchi responsive (griglia a 3 celle) che si impilano su schermi da piccoli a md.
+Varia formattazione per abbellire le scritte.
+All'interno componente "card" (https://getbootstrap.com/docs/4.0/components/card/)
+
+Lecture 37 Coding the Menu Categories
+
+
 
 
 

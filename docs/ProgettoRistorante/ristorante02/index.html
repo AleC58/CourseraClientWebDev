@@ -57,7 +57,8 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="awards.html">
-								<span class="bi bi-award-fill"></span><br class="d-none d-sm-block"> Awards</a>
+								<span class="bi bi-award-fill"></span><br class="d-none d-sm-block"> Awards
+							</a>
 						</li>
 						<li id="phone" class="d-none d-md-block">
 							<a href="tel:410-602-5008">410-602-5008</a>
@@ -68,6 +69,80 @@
 			</div> <!-- .container -->
 		</nav>
 	</header>
+
+	<!-- "d-block d-md-none" = visibile su schermi piccoli, e nascosto da md in su -->
+	<div id="call-btn" class="d-block d-md-none">
+		<a class="btn" href="tel:410-602-5008">
+			<span class="bi bi-phone-vibrate-fill"></span> 410-602-5008
+		</a>
+	</div>
+	<div id="xs-deliver" class="text-center d-block d-md-none">* We Deliver</div>
+
+	<div id="main-content" class="container"> <!--***** main-content *****-->
+		<div class="jumbotron">
+			<img src="images/jumbotron_768.jpg" alt="Picture of restaurant" title="Picture of restaurant" class="img-fluid d-block d-md-none">
+		</div>
+
+		<div id="home-tiles" class="row"> <!-- tiles -->
+			<div class="col-lg-4 col-md-6 col-xs-12"> <!-- menu-tile -->
+				<a href="menu-categories.html"><div id="menu-tile"><span>menu</span></div></a>
+			</div>
+			<div class="col-lg-4 col-md-6 col-xs-12"> <!-- specials-tile -->
+				<a href="single-category.html"><div id="specials-tile"><span>specials</span></div></a>
+			</div>
+			<div class="col-lg-4 col-md-12 col-xs-12"> <!-- map-tile -->
+				<a href="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/data=!4m6!1m3!3m2!1s0x89c81a14e7817803:0xab20a0e99daa17ea!2sDavid+Chu's+China+Bistro!3m1!1s0x89c81a14e7817803:0xab20a0e99daa17ea" target="_blank">
+					<div id="map-tile">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.675372390488!2d-76.71386218529199!3d39.3635874269356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81a14e7817803%3A0xab20a0e99daa17ea!2sDavid+Chu&#39;s+China+Bistro!5e0!3m2!1sen!2sus!4v1452824864156" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<span>map</span>
+					</div>
+				</a>
+			</div>
+		</div> <!-- #home-tiles -->
+	</div> <!-- #main-content -->
+
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<section id="hours" class="col-md-4">
+					<div class="card">
+						<div class="card-header">Hours:</div>
+						<div class="card-body">
+							Sun-Thurs: 11:15am - 10:00pm<br />
+							Fri: 11:15am - 2:30pm<br />
+							Saturday Closed
+							<hr class="d-block d-md-none"> <!-- visible-xs in B 4 -->
+						</div>
+					</div>
+				</section>
+				<section id="address" class="col-md-4">
+					<div class="card">
+						<div class="card-header">Address:</div>
+						<div class="card-body">
+							7105 Reisterstown Road<br />
+							Baltimore, MD 21215
+							<p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+							<hr class="d-block d-md-none"> <!-- visible-xs in B 4 -->
+						</div>
+					</div>
+				</section>
+				<section id="testimonials" class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+							<hr class="d-block d-md-none"> <!-- visible-xs in B 4 -->
+							<p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+							<hr class="d-block d-md-none"> <!-- visible-xs in B 4 -->
+						</div>
+					</div>
+				</section>
+			</div> <!-- footer >> .row -->
+			<div class="text-center">
+				&copy; Copyright David Chu's China Bistro 2016
+			</div>
+		</div> <!-- footer > .container -->
+	</footer>
 
 </body>
 </html>

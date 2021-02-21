@@ -13,37 +13,41 @@ a {
 	background-color: #f6b319;
 	border-radius: 0;
 	border: 0;
-	border: 2px solid #f00; /* test */
-}
-
-#menu {
-	border: 2px solid #000; /* test */
 }
 
 #logo-img {
 	background: url("../images/restaurant-logo_large.png") no-repeat;
 	width: 150px;
 	height: 150px;
-	margin: 10px 15px 10px 0;
+	margin: 5px 10px 5px 0;
+	padding: 0px 0 0 0;
 }
 
-.navbar-brand {
-	padding-top: 25px;
-	border: 2px solid #fff; /* test */
+.navbar {
+	padding: 0;
 }
 
-.navbar-brand p { /* Kosher certif. */
+.navbar>.container {
+	padding: 0;
+}
+
+#brand {
+	padding-top: 15px;
+	font-size: 1.125rem;
+}
+
+#brand p { /* Kosher certif. */
 	color: #000;
 	text-transform: uppercase;
 	font-size: .7em;
-	margin-top: 25px;
+	margin-top: 15px;
 }
 
-.navbar-brand p span { /* Star-k */
+#brand p span { /* Star-k */
 	vertical-align: middle;
 }
 
-.navbar-brand h1 { /* nome del ristorante */
+#brand h1 { /* nome del ristorante */
 	font-family: 'Lora', serif;
 	font-size: 1.5em;
 	font-weight: bold;
@@ -53,16 +57,32 @@ a {
 	margin-top: 0;
 	margin-bottom: 0;
 	line-height: .75;
-	/*padding-top: 25px;*/
 }
 
 .navbar-toggler-icon { /* per sfondo chiaro*/
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.navbar-toggler-iconZZZ { /* per sfondo scuro*/
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+#collapsable-nav a {
+	color: #951c49;
+	text-align: center;
+}
+
+
+#collapsable-nav a:hover {
+	background-color: #e7e7e7;
+}
+
+#collapsable-nav .bi {
+	font-size: 2em;
+}
+
 #nav-list {
 	margin-top: 10px;
-	border: 2px solid #00f; /* test */
 }
 
 #nav-list a {
@@ -76,16 +96,14 @@ a {
 }
 
 
-#nav-list a span {
-	font-size: 1.8em;
-}
-
 #phone {
-	margin-top: 5px;
+	margin-top: 10px;
+	padding-left: 20px;
 }
 
 #phone a { /* phone number */
-	border: 2px solid #f00; /* test */
+	/* border: 2px solid #f00; test */
+	font-size: 1.8em;
 	text-align: right;
 	padding-bottom: 0;
 }
@@ -93,82 +111,223 @@ a {
 #phone div { /* we deliver */
 	color: #557c3e;
 	text-align: right;
-	padding-right: 15px;
 }
 
-.navbar-header button.navbar-toggler, .navbar-header .icon-bar {
+button.navbar-toggler {
 	border: 1px solid #61122f;
 }
 
-.navbar-header button.navbar-toggler {
-	clear: both;
-	margin-top: -30px;
+#call-btn > a {
+	font-size: 1.5em;
+	display: block;
+	margin: 10px 20px 0 20px;
+	padding: 10px;
+	border: 2px solid #fff;
+	background-color: #f6b319;
+	color: #951c49;
 }
+
+#call-btn > a > span {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+#xs-deliver {
+	margin-top: 5px;
+	font-size: .7em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+.jumbotron { /* tipo Bootstrap 4, con modifiche */
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
+  box-shadow: 0 0 50px #3f0c1f;
+  border: 2px solid #3f0c1f;
+}
+
+#menu-tile, #specials-tile, #map-tile {
+	height: 250px;
+	width: 100%; /* 100% dell'elem. contenitore, che è un div del grid system di B. */
+	margin-bottom: 15px;
+	position: relative; /* così posso posizionare in modo assoluto le scritte  (span) all'interno */
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
+}
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover { /* per dare l'effetto link all'utente */
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-tile {
+	background: url('../images/menu-tile.jpg') no-repeat;
+	background-position: center;
+}
+#specials-tile {
+	background: url('../images/specials-tile.jpg') no-repeat;
+	background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: .8;
+}
+
+footer {
+	margin-top: 30px;
+	padding-top: 35px;
+	padding-bottom: 30px;
+	background-color: #222;
+}
+
+footer .card {
+	background-color: transparent;
+	width: 100%;
+}
+
+footer .card-header {
+	font-size: 1.3em;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+footer .card-body {
+	line-height: 2;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#address p { /* * Delivery area ... */
+	color: #557c3e;
+	font-size: .8em;
+	line-height: 1.6;
+}
+
+#testimonials {
+	font-style: italic;
+}
+#testimonials p:nth-child(2) {
+	margin-top: 25px;
+}
+
+
+
+/************** MEDIA QUERY *************/
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
+	.container .jumbotron {
+		background: url('../images/jumbotron_1200.jpg') no-repeat;
+		height: 675px;
+	}
 
 }
 
 /********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* Header */
-  #logo-img {
-    background: url('../images/restaurant-logo_medium.png') no-repeat;
-    width: 100px;
-    height: 100px;
-    margin: 5px 5px 5px 0;
-  }
-  /* End Header */
+@media (min-width: 992px) and (max-width: 1199.8px) {
+	/* Header */
+	#logo-img {
+		background: url('../images/restaurant-logo_medium.png') no-repeat;
+		width: 100px;
+		height: 100px;
+		margin: 5px 5px 5px 0;
+	}
+
+	.container .jumbotron {
+		background: url('../images/jumbotron_992.jpg') no-repeat;
+		height: 558px;
+	}
+
 }
 
 /********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991.8px) {
+	#collapsable-nav .bi {
+		font-size: 1.8em;
+	}
+
+	#phone a { /* phone number */
+		font-size: 1.2em;
+	}
+
+	.container .jumbotron {
+		background: url('../images/jumbotron_768.jpg') no-repeat;
+		height: 432px;
+	}
 
 }
 
 /********** Extra small devices only **********/
-@media (max-width: 767px) {
-  /* Header */
-  .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
-  }
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 10px;
-    font-size: 5vw; /* 1vw = 1% of viewport width */
-  }
-  .navbar-brand p { /* Kosher cert */
-    font-size: .6em;
-    margin-top: 12px;
-  }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
-  }
+@media (max-width: 767.8px) {
+	/* Header */
+	.navbar-brand {
+		height: 80px;
+	}
+	#brand h1 { /* Restaurant name */
+		padding-top: 0px;
+		font-size: 4.5vw; /* 1vw = 1% of viewport width */
+	}
+	#brand p { /* Kosher cert */
+		font-size: .6em;
+		margin-top: 12px;
+	}
+	#brand p img { /* Star-K */
+		height: 20px;
+	}
 
-  #menu a { /* Collapsed nav menu text */
-    font-size: 1.2em;
-  }
-  #menu a span { /* Collapsed nav menu glyph */
-    font-size: 1em;
-    margin-right: 5px;
-  }
+	#collapsable-nav a { /* Collapsed nav menu text */
+		font-size: 1.2em;
+	}
+	#collapsable-nav .bi { /* Collapsed nav menu glyph */
+		font-size: 1.2em;
+		margin-right: 5px;
+	}
 
-  #call-btn > a {
-    font-size: 1.5em;
-    display: block;
-    margin: 0 20px;
-    padding: 10px;
-    border: 2px solid #fff;
-    background-color: #f6b319;
-    color: #951c49;
-  }
-  #xs-deliver {
-    margin-top: 5px;
-    font-size: .7em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-  /* End Header */
+	#menu-tile, #specials-tile { /* fa si che il bordo sia attaccato all'immagine (che è larga 360xp) */
+		width: 360px;
+		margin: 0 auto 15px;
+	}
 
+	/* Footer */
+	footer section {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	footer section:nth-child(3) {
+		margin-bottom: 0; /* margin already exists on the whole row */
+	}
+	footer section hr {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/* End Footer */
+
+}
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4 o 5) **********/
+@media (max-width: 479px) {
+	/* Header */
+	.navbar-brand h1 { /* Restaurant name */
+		padding-top: 5px;
+		font-size: 6vw;
+	}
+	/* End Header */
+
+	/* Home page */
+	#menu-tile, #specials-tile {
+		width: 280px;
+		margin: 0 auto 15px;
+	}
 }
