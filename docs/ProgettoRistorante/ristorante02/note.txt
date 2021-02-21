@@ -23,4 +23,4 @@ La mappa: andare su G Maps e cercare l'idirizzo; aprire il menudi G Maps (il san
 Per dispositivi molto piccoli (es iPhone 4 o 5) ci sono problemi (le immagini dei tile sono larghe 360px e l'iPhone 5 è largo 320px): li risolviamo con altre media query.
 
 Footer.
-Usa uno schema responsive a 3 colonne fino a md, e poi impilato su schermi piccoli. Le celle contengono il componente "card" (https://getbootstrap.com/docs/4.0/components/card/)
+Usa uno schema responsive a 3 colonne fino a md, e poi impilato su schermi piccoli. Le celle contengono il componente "card" (https://getbootstrap.com/docs/5.0/components/card/)
