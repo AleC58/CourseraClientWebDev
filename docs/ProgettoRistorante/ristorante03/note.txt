@@ -1,4 +1,85 @@
 Versione 3
-Corrisponde a nn after
-(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecturenn/after)
+Corrisponde a 39 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture39/after)
+
+Creazione pagina menuCategories.html
+Copia il file index.html in menuCategories.html, e si lavora su quest'ultimo.
+Si modifica la parte main content. Si userà anche js per l'HTML dinamico.
+Si cancella il contenuto del div #main-content, e si lavora li dentro.
+Le categorie si mettonon in una griglia.
+Formattazione varia.
+we have a span and we're going to
+target that span and position it absolutely within the div element itself.
+So, the div element will be like a relative anchor for
+the span that's inside of it and we're going to put it on the bottom. 
+And last thing we're going to do here is target the id menu categories title + div, which means the next sibling to this element.
+
+Creazione pagina singleCategory.html
+Si parte duplicando menuCategories.html
+Vogliamo rendere evidente in che pagina siamo, ovvero evidenziare la voce corrente del menu. Lo facciamo assegnando la classe "active" alla voce che rappresenta la pagina corrente. NB: funziona solo se .navbar ha anche uno schema colore, altrimenti bisogna aggiungere al css
+.navbar-nav .active { /* per sfondo scuro; il selettore dovrebbe essere .navbar-nav .nav-link.active, ma non va*/
+	background-color: #fff;
+}
+Anche adesso si elimina tutto il contenuto del div main-content.
+Struttura con una griglia all'interno di un'altra.
+La griglia esterna contiene le vrie voci del menu, mentre quella interna contiene una singola voce.
+La griglia esterna è a 2 colonne uguali, mentre l'interna è a due colonne 5/7 (5/12 per l'immagine del piatto e 7/12 per la descrizione).
+And the reason we chose small here is because when the screen is medium or
+small or large, so small, large or medium, we want these things to be horizontal to each other.
+So this cell should be horizontal to this cell.
+And, if it's smaller than that, meaning if it's extra small,
+I'm okay with that point to have this cell stack upon this cell.
+So they are basically going to be positioned one on top of the other one. 
+The number "D01" is the number that we want to put onto the actual picture,
+so let's take a look here, this is the number.
+And this number comes directly, kind of a number code,
+comes directly from the restaurant's menu, so we want to make sure to keep that and kind of let it correspond to the menu itself.
+And the way we're going to position this,
+if you take a look at the bottom right over here,
+is very similar to the way we positioned the menu titles and the category titles,
+is we're going to make this item a relative, position relative, and
+then I position this absolutely to the bottom right, which should be fairly easy.
+Next thing is the image itself: we're going to give it a class img-responsive (in Bootsrap 5 è .img-fluid). That's a bootstrap class that lets it stretch out and contract depending on the size of the screen.
+Now notice that I'm not really using a responsive Images in the sense that
+I'm not really substituting this image, depending on the screen size.
+So I could have just made this a background image and then substitute the image depending on the screen size for the larger screen size.
+That would give a higher resolution lower, lower, lower and so on.
+And the reason I'm not doing it is because it's already a pretty small
+resolution as it is.
+And I don't think it's going to be such a big deal to load,
+even on a mobile device over a cellular connection.
+And the maximum width of 250 pixels.
+Let's go ahead and take a look at the HTML of the menu item photo, right here, menu item photo. And you see that we made the image responsive.
+Well the image is 250 pixels wide. We don't want the image to be any bigger than that, otherwise this is going to become pixelated and the layout is probably going to get messed up as well.
+So that is why we're saying that the maximum width it can ever go
+is 250 pixels. Don't stretch this element anymore.
+Varia fmt.
+In this lecture, we're going to address the variability of the data that
+we display, through using the grid that we created, in the previous parts.
+It's very possible the description is going to be pretty short,
+maybe this description will be pretty long and, I don't know.
+So how do we take care of this problem?
+Usando clearfix. NB: questo era un problema fino a Bootsrap 4, che usava i float. Con Bootsrap 5 (che usa ...) non è più un problema.
+Aggiunge la voce Home al menu collassabile, rendendola visibile solo per xs e md (modifica index.html, menuCategories.html e singleCategory.html) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

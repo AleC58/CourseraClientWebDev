@@ -67,6 +67,10 @@ a {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+.navbar-nav .active { /* per sfondo scuro; il selettore dovrebbe essere .navbar-nav .nav-link.active, ma non va*/
+	background-color: #fff;
+}
+
 #collapsable-nav a {
 	color: #951c49;
 	text-align: center;
@@ -221,11 +225,91 @@ footer .card-body {
 	margin-top: 25px;
 }
 
+/* END HOME PAGE */
+
+
+/* MENU CATEGORIES PAGE */
+.category-tile { 
+	position: relative;
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto 15px auto;
+}
+.category-tile span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: .8;
+}
+.category-tile:hover {
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-categories-title + div {
+	margin-bottom: 50px;
+}
+/* END MENU CATEGORIES PAGE */
+
+/* SINGLE CATEGORY PAGE */
+.menu-item-tile {
+	margin-bottom: 25px;
+}
+.menu-item-tile hr {
+	width: 80%;
+}
+.menu-item-tile .menu-item-price {
+	font-size: 1.1em;
+	text-align: right;
+	margin-top: -15px;
+	margin-right: -15px;
+}
+.menu-item-tile .menu-item-price span {
+	font-size: .6em;
+}
+.menu-item-photo {
+	position: relative;
+	border: 2px solid #3F0C1F; 
+	overflow: hidden;
+	padding: 0;
+	margin-right: -15px;
+	margin-left: auto;
+	margin-bottom: 20px;
+	max-width: 250px;
+}
+.menu-item-photo div {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 80px;
+	background-color: #557c3e;
+	text-align: center;
+}
+.menu-item-description {
+	padding-right: 30px;
+}
+h3.menu-item-title {
+	margin: 0 0 10px;
+}
+.menu-item-details {
+	font-size: .9em;
+	font-style: italic;
+}
+/* END SINGLE CATEGORY PAGE */
+
+
 
 
 /************** MEDIA QUERY *************/
 
-/********** Large devices only **********/
+/********** Large devices only  (xl) **********/
 @media (min-width: 1200px) {
 	.container .jumbotron {
 		background: url('../images/jumbotron_1200.jpg') no-repeat;
@@ -234,7 +318,7 @@ footer .card-body {
 
 }
 
-/********** Medium devices only **********/
+/********** Medium devices only (lg) **********/
 @media (min-width: 992px) and (max-width: 1199.8px) {
 	/* Header */
 	#logo-img {
@@ -251,7 +335,7 @@ footer .card-body {
 
 }
 
-/********** Small devices only **********/
+/********** Small devices only (md) **********/
 @media (min-width: 768px) and (max-width: 991.8px) {
 	#collapsable-nav .bi {
 		font-size: 1.8em;
@@ -268,7 +352,7 @@ footer .card-body {
 
 }
 
-/********** Extra small devices only **********/
+/********** Extra small devices only (sm) **********/
 @media (max-width: 767.8px) {
 	/* Header */
 	.navbar-brand {
@@ -299,6 +383,7 @@ footer .card-body {
 		margin: 0 auto 15px;
 	}
 
+
 	/* Footer */
 	footer section {
 		margin-bottom: 30px;
@@ -313,6 +398,27 @@ footer .card-body {
 		margin-right: auto;
 	}
 	/* End Footer */
+
+}
+
+/********** xs **********/
+
+@media (max-width: 575.8px) {
+	.menu-item-photo {
+		margin-right: auto;
+	}
+	.menu-item-tile .menu-item-price {
+		text-align: center;
+	}
+	.menu-item-description {
+		text-align: center;;
+	}
+
+	.menu-item-tile hr {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 }
 

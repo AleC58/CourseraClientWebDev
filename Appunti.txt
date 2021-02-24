@@ -954,9 +954,30 @@ Da Bootstrap (https://getbootstrap.com/docs/4.0/components/card/): "A card is a 
 Anche quì, come per le altre parti della pagina, si usa un div.container, in modo da mantenere l'allineamento.
 Poi in una .row ci mettiamo tre section.col-md-4 per avere 3 blocchi responsive (griglia a 3 celle) che si impilano su schermi da piccoli a md.
 Varia formattazione per abbellire le scritte.
-All'interno componente "card" (https://getbootstrap.com/docs/4.0/components/card/)
+All'interno componente "card" (https://getbootstrap.com/docs/5.0/components/card/)
 
 Lecture 37 Coding the Menu Categories
+we have a span and we're going to
+target that span and position it absolutely within the div element itself.
+So, the div element will be like a relative anchor for
+the span that's inside of it and we're going to put it on the bottom. 
+
+Lecture 38 Coding the Single Menu Category Page
+Next thing is the image itself: we're going to give it a class img-responsive (in Bootsrap 5 è .img-fluid). That's a bootstrap class that lets it stretch out and contract depending on the size of the screen.
+Now notice that I'm not really using a responsive Images in the sense that
+I'm not really substituting this image, depending on the screen size.
+So I could have just made this a background image and then substitute the image depending on the screen size for the larger screen size.
+That would give a higher resolution lower, lower, lower and so on.
+And the reason I'm not doing it is because it's already a pretty small
+resolution as it is.
+And I don't think it's going to be such a big deal to load,
+even on a mobile device over a cellular connection.
+And the maximum width of 250 pixels.
+Let's go ahead and take a look at the HTML of the menu item photo, right here, menu item photo. And you see that we made the image responsive.
+Well the image is 250 pixels wide. We don't want the image to be any bigger than that, otherwise this is going to become pixelated and the layout is probably going to get messed up as well.
+So that is why we're saying that the maximum width it can ever go
+is 250 pixels. Don't stretch this element anymore.
+
 
 
 
