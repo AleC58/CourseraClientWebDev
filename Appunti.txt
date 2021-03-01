@@ -978,6 +978,481 @@ Well the image is 250 pixels wide. We don't want the image to be any bigger than
 So that is why we're saying that the maximum width it can ever go
 is 250 pixels. Don't stretch this element anymore.
 
+Lecture 39 Testing the Mobile Version on a Real Phone
+Aggiunge la voce di menu "Home" per monitor xs.
+
+Lecture 40 Adjusting Development Environment for Javascript Development
+On Sublime text ... only include the lecture, the particular lecture we're on, in our work space.  There is a command that Sublime
+comes with and it works on Windows, Linux, or Mac, and
+this command allows you to start Sublime in a particular directory.
+So, in this case, I mapped it to the keyword sublime and
+if I say dot, which at this point is the current directory, and open it up.
+Sublime will open the Sublime editor, and
+it will only have that particular folder, as its kind of a work space.
+So nothing else will be included. -> è meno "pesante"
+Il comando da cmd è (nella dir. desiderata) "sublime ."
+Da Sublime è File / Open folder.
+Now let's go ahead start the browser-sync. Da cmd:
+(portarsi nella directory del progetto, e poi)
+browser-sync start --server --directory --files "**/*"
+(**/* serve per includere anche le sottodirectory)
+Okay, so what we're actually interested in is not so much the page anymore.
+Is we're interested in the JavaScript that is going to run, and chrome developer
+tools which is part of chrome browser is a great tool to have and to actually use. So what we're going to do is we're going to do Ctrl+Alt+I (o F12), so we'll go ahead, and open Chrome Developer Tools.
+Lecture 40, Part 2: Where to Place Javascript Code
+a couple of places where you could do that.
+The first one is you can have a script tag inside the head section. 
+So, this between the opening script and
+the closing script tags, you can now write your JavaScript.
+Another place where you could do that is, an external file. 
+Now, just like CSS in HTML, JavaScript code is executed sequentially.
+So it means whatever is inside of this script.js
+file is going to get executed first.
+And whatever is inside this script tag is going to get executed second. 
+we'll go ahead and say console.log.
+And console.log is something that we're going to be using a lot. 
+t's also important to remember that the JavaScript engine inside the browser,
+is a single threaded engine, which means that
+as the code in your JavaScprit executes, it will execute completely
+without being interrupted by any other JavaScript code from somewhere outside. 
+Now the head section is not the only section where I could define JavaScript.
+I could define JavaScript in a very similar manner
+that I defined it in the head.
+I could define that JavaScript in the body as well. 
+I can include a JavaScript file right in the middle of the body of
+the HTML page as well.
+
+Lecture 41 Defining Variables, Function, and Scope
+Variable definitions should always start with the keyword var.
+Now notice that no types are declared in JavaScript.
+And the reason that is,
+is because JavaScript is called a dynamically typed language.
+Now what that means is that the JavaScript engine
+figures out the type of a particular variable at runtime.
+And it also means that the same variable can hold different types during the life of the execution of the program.
+Now in JavaScript, when you define a function name, it's very,
+very similar to defining a variable whose value is a function.
+So for example, you could define a function in JavaScript by either using
+the keyword function followed by the function name.
+Or you could create a variable and set it equal to a function.
+Now when you do it the second way, no name is defined after the function keyword.
+However, either syntax let's you refer to this function as a.
+Now notice that the value of the function is assigned to a,
+not the returned result of the execution of that function.
+So after either of these definitions you can now invoke,
+otherwise known as execute, function by referring to it by it's name a. 
+The way you invoke a function is by taking the name, or the reference,
+to that function and putting the parenthesis afterwards.
+So that is called a function execution, or function invocation.
+Now you can also define arguments to be passed to the JavaScript function.
+Now the defined arguments are defined without the keyword var.
+In fact, if you place the key word var in the function argument definition,
+that will be a syntax error.
+If you want your function to return some value, you use the return keyword
+followed by whatever value it is that you want to return.
+If the return keyword is not followed by a value,
+what you're signaling to the JavaScript engine is that it should
+terminate the function and exit out of it without returning anything. 
+Now each function or variable lives within a particular scope.
+In JavaScript there's really two scopes, global scope and
+function, or otherwise known as lexical scope.
+Now lexical here means that it depends on where something is physically defined.
+For example, a variable that's defined within a function
+is physically defined within that function.
+There's no block scope in JavaScript.
+Now variables and functions defined in a global scope are available everywhere.
+Meaning any other functions that are defined in a global scope and so
+on can get access to these globally defined functions and variables.
+As far as function and lexical scope, variables and
+functions defined here are available only within this function.
+And you heard it right, you can define functions within other functions.
+And those newly defined functions,
+have a way to get at its outer function variables and functions.
+Which leads us to the next topic, the scope chain.
+Now in order to understand how scope chain works in JavaScript,
+you have to understand how a JavaScript engine executes things.
+Everything in JavaScript is executed in an execution context.
+Now a function invocation creates a new execution context
+within which that function is executed.
+Now each execution context has the following.
+Number one, it has its own variable environment.
+This is where it stores its newly defined functions and variables.
+It also gets the special this object,
+which we're going to talk about at a later lecture.
+And what's most important for
+our discussion right now, it gets a reference to its outer environment.
+Meaning the execution environment within which this particular function is defined.
+Therefore, the outer reference of function B is the global scope, not function A.
+What this means is that it does not matter where a particular function is executed.
+What matters as far as resolving scope of a variable is concerned
+is where that function is physically defined. 
+...
+So now b is defined inside function a,
+which means b's outer reference is function a variable scope. 
+---
+Now, it's important to remember that all JavaScript code runs within some execution
+context, and each execution context has a number of things that are available to it.
+One of those things is the outer variable environment.
+And scope chain is used to retrieve variables from outer variable
+environments that are not found within your own execution context. 
+
+Lecture 42 Javascript Types
+A type is a particular data structure.
+Built in types, can be used to build other data structures, that you can then use your particular business logic.
+Now JavaScript has seven built-in types, six primitive, and one object type.
+So what is an object in JavaScript?
+Well in JavaScript an object is nothing more than a collection of name/value pairs.
+What about primitives?
+Well primitive type is a type that represents a single, immutable value.
+What does immutable mean?
+Immutable means once it's set, once that value is set It cannot be changed.
+It means that once you set it, the value of the variable becomes read-only.
+You could certainly create another value based on an a existing value but
+the memory space that was allocated for the first value is not changed.
+Instead, you create a new memory space for the new value.
+primitive types
+boolean: true or false
+undefined: The undefined data type signifies that no value has ever been set
+on this particular variable of this type.
+This is the value that every variable gets when the JavaScript engine sets up
+the variable in memory when it defined but has never been assigned any value yet. Now you can set a variable to the keyword undefined yourself manually,
+but you should never ever do that. And the reason is, is because it's meaning is that it's never been defined. So defining it and then setting it to undefined Is really counter to its core meaning. 
+null: Null signifies the lack of value. Now, the lack of value as opposed to undefined which signifies the lack of definition. And it's also perfectly normal and perfectly okay to explicitly in your code set a variable to the null value.
+number: Well number is actually the only numeric type in JavaScript and
+it's always represented under the hood as a double-precision 64-bit floating point. In other words, JavaScript does not have integer type. Integers in JavaScript are just a subset of doubles instead of a separate data type.
+string: in JavaScript is very similar to the string type in other languages in that it is a sequence of characters used to represent text and you can define strings either using single or double quotes.
+symbol: Now we're not really going to cover this data type in this class.
+And the reason is, is that it's new to the ES6, otherwise known as ecmoscript 6.
+Now ecmoscript 6, was released in 2015, around mid 2015, and it just isn't widely supported. 
+Undefined in JavaScript has a specific meaning and
+the meaning of it is, is that it has been declared, or defined, so to speak.
+But it has not been set to any value.
+So in this case the variable has been declared and a memory space has been
+allocated for it, but no value has been placed in that memory space.
+That's the state that assigns this variable to be a type of undefined.
+Now if I save that, now it will tell me that the variable is actually undefined. 
+
+Lecture 43 Common Language Constructs
+string concatenation.
+And the way I comment out the line without actually having to type it is
+to press Ctrl+/
+math operators + - * / () priorità
+NaN
+==
+The x now is no longer 4 as a number, x = 4 as a string.
+So what happens if we actually compare them now?
+And you could see it says x = 4, 4 as a string is equal to y = 4.
+Now what is going on here?
+Obviously, the string can't possibly be equal to a number.
+Well, what's going on here is called type coercion.
+And type coercion just means that the language converts something for
+you from one type to another type automatically on the fly.
+So when the JavaScript tries to evaluate this equality,
+it converts one of the types to be the same type as the other variable and
+only then compares the values.
+Now what if you didn't want that? 
+What if you didn't want JavaScript to automatically convert things for
+you when trying to evaluate its equality?
+Well, that's where strict equality comes in.
+Let's go ahead and comment that out and go to the Strict equality section here, and we'll uncomment that.
+So strict equality is signified by using ===. 
+In this lecture, we're going to go ahead and pick up speaking about
+what JavaScript considers boolean true and what JavaScript considers boolean false.
+Okay, so in this if statement
+I listed every single thing that the if statement will consider False.
+The first of all it's going to consider the keyword false is false.
+Now then you see something that is an or operator.
+Now the way the or operator works, is that if something evaluates to true on it's
+left side, it does not check anymore what is going to be to it's right side.
+And since I know that to it's left side at the moment, is going to be false.
+I can be sure that it's going to evaluate this, and if this false,
+which it is, it's going to try to evaluate this for truthfulness.
+And if this is true, it will stop and will not evaluate anymore.
+However, null also get's coerced to being false in JavaScript.
+So therefore, we keep continuing, saying no which is again false or undefined.
+Undefined is a keyword that also gets coerced to false in JavaScript.
+Next, it's an empty string, so
+it's basically double quotes with nothing in the middle.
+That also gets coerced into being false.
+Zero gets coerced to being false.
+And NAN, not a number, gets coerced to being false. 
+Now let me show you a very quick trick that if you ever forget, if
+you have something and you're not sure is it supposed to evaluate to false or true.
+Well, JavaScript provides these wrapper objects around the primitives.
+So even though boolean is a primitive type,
+there's a wrapper object called Boolean with a capital B.
+That you can actually pass things to, to see what it would coerce to.
+So, for example, if I pass it a null, that would coerce to false.
+And there you go, it shows you false.
+If I pass it something like an empty string, it'll coerce it to false.
+But if I pass it anything else that is not in the list of false things that we
+listed right here in that if statement.
+So if I pass it something like, hello world.
+That will evaluate to true,
+which brings us to the next thing of what is true in JavaScript? 
+Well, first of all the true keyword is evaluated as true in JavaScript.
+After the keyword true, you see two ampersands.
+And two ampersands signify the logical and operator.
+And the way the logical and operator works, it will only return
+true if both things on the left and on its right are true.
+So if both of these things are true, this will be true.
+And again, since we have a non-empty string here, this will evaluate to true.
+Then we ending it, ending it again with a number one which is a number not a 0.
+Anything not a zero also evaluates a true.
+And just in case you think a -1 would evaluate to false, it does not.
+It actually also evaluates to true.
+Any number that is non zero will evaluate to true.
+And if we end it with the string false,
+even though the string itself has the value false, but
+since it's a non-empty string, that will evaluate to true.
+stile scrittura {} -> aperta sulla stessa riga!
+ciclo for
+
+Lecture 44 Handling Default Values
+function f(param) {
+  param = param || miDefaultValue;
+  ...
+}
+-> se nella chiamata param viene fornito lo uso
+-> se nella chiamata param non viene fornito uso miDefaultValue
+
+Lecture 45 Creating Objects Using 'new Object()' Syntax
+An object is, again, a collection of name-value pairs.
+we're going to go over how to create objects in different ways and
+how to assign properties, in other words how to create those name-value pairs. 
+What you see in front of you is a very simple object creations, so
+we're creating a company variable and we're setting it to new object:
+var company = new Object();
+Once we created a reference to an object, we're ready to create properties of that object.
+Now in JavaScript, when a property doesn't exist and you simply mention that property in an object, JavaScript engine creates that property for you.
+Quindi se dopo aver creato l'oggetto scriviamo:
+company.name = "XYZ":
+il JS engine crea le proprietà name per l'oggeto company e gli assegna il valore "XYZ".
+Oltre alla "dot notation" posso usare la notazione a parentesi:
+company.name
+oppure:
+company["name"]
+La "bracket notation" permette di usare gli spazi all'interno del nome della proprietà:
+company["stock price"]
+accede alla proprietà "stock price" dell'oggetto company.
+Con la "bracket notation" posso anche usare le variabili:
+var propStock = "stock price";
+company[propStock] = 110;
+console.log("Stock price = " + company[propStock]);
+-> posso "calcolare" al volo il nome della proprietà nel codice.
+Vediamo ora una sintassi più semplice.
+Object literal:
+var facebook = {
+  name: "facebook",
+  ceo: {
+    firstName: "Mark",
+	 favColor: "blue"
+  },
+  stock: 110,
+  "nome propr con spazi": 999
+};
+notare che le proprietà devono essere separate tra loro com la virgola, che NON ci deve essere dopo l'ultima proprietà.
+Creare un oggetto in questo modo o crearlo con la new è la stessa cosa.
+
+Lecture 46 Functions Explained
+So the first thing I want you to know is that functions
+in JavaScript are what's called, first class data types.
+What that means is, is that whatever you could do with the variable,
+whatever you could do with an object you could also do with the function.
+You could pass that around, assign it to a variable which as you've seen before,
+you could pass it as an argument to another function,
+you could return it as a return result from a function.
+Functions in JavaScript are objects.
+They're regular objects that have some special properties to them.
+So since they're regular objects, I should be able to set properties on them
+just like I set properties on the other object. ES:
+function mult(x, y) {
+  return x * y;
+};
+mult.version = "1.0";
+console.log(mult(3, 4));
+console.log(mult.version);
+console.log(mult); /* è come scrivere: console.log(mult.toString()); */
+
+visualizza:
+12
+1.0
+function mult(x, y) {
+  return x * y;
+};
+So our function is nothing more then an object.
+Now the fact that it's an object allow us to do quite
+a number of interesting things that are so useful in every application. 
+Più altro ...
+
+Lecture 47 Passing Variables by Value vs. by Reference
+Copying or passing things by the value means that changing the copied
+value in b, does not affect the value stored in a, and vice versa.
+...
+Now in JavaScript, the way it works is that primitives are passed by value,
+and objects are passed by reference.
+Or to say it another way, primitives are copied by value and
+objects are copied by reference.
+Now the truth is that underneath the hood
+in the JavaScript engine everything is actually passed and copied by value.
+And the difference is why one is really called passed by reference and
+one passed by value really comes because of the way the objects and
+primitives are stored in memory.
+The difference between passed by value and
+passed by reference is that in passed by value the values once it's
+changed do not affect the original value of the original variable.
+As opposted by reference when you change the value,
+the original object that's pointing to it is changed as well. 
+
+Lecture 48 Function Constructors, prototype, and the 'this' Keyword
+In this lecture, I'd like to show you one more way to create objects in JavaScript.
+And it's a very common way, especially if you have functionality together with those objects, very similar to like a Java class, for example. 
+Now, we discussed in one of the previous lectures as to what happens when you
+actually invoke a function.
+We discussed the fact that a new execution context is created within which
+this line or whatever is inside the function is actually executed.
+And we also discussed the fact that that execution context gets a special
+variable called "this".
+And "this" is pointing to the global Window object. 
+But if we actually wanted to kind of encapsulate some data within a particular
+object and use a function for it, then we would need "this" to point to something else.
+And this is where function constructors come in.
+Okay, so let's create another function, and let's call this function Circle, we're going to create circles.
+And this time, we're going to say Circle with capital C.
+Now, there's really nothing about capital C that does anything special
+other than it lets me know that it's a function constructor.
+So it's basically just a convention to let other developers
+know that this is a function constructor as opposed to a regular function.
+And a Circle should have a radius:
+
+function Circle(radius) {
+  this.radius = radius;
+}
+
+And what I'm going to do is, instead of just invoking the function Circle,
+I'm going to use the new keyword and then say Circle, and give it,
+let's say, 10 as the radius:
+
+var myCircle = new Circle(10);
+
+When I invoke a function together with the new keyword, the JavaScript engine
+makes "this" point to the object itself that got created, which is the Circle.
+So this means that technically, what I could do inside function Circle is I could say, this.radius, so I could create sort of a member variable or
+a property of this Circle object, and I could say, radius.
+Now, the function constructor itself or the function Circle cannot return anything. 
+Now, what would be an object without some methods?
+And methods in JavaScript are just functions that are set on properties of objects:
+
+function Circle(radius) {
+  this.radius = radius; // proprietà (è duplicata in ogni oggetto: OK!)
+  this.getArea = function() { // metodo (è duplicato in ogni oggetto! NO!)
+    return (Math.PI * Math.pow(this.radius, 2));
+  };
+};
+
+The problem is, as we keep creating these Circle objects over and over in our code, we're going to keep creating this getArea function over and over in our code. Because every time we say new, this entire thing gets created.
+Well, for radius, it's perfectly normal, because each circle should have its own radius.
+We really don't need our type Circle to have its own getArea on every
+object that's created.
+It really should be just created once, and all the circles, all the instances of a Circle, should share it.
+And the way we could do that is by using a special property called prototype:
+
+function Circle(radius) {
+  this.radius = radius;  // proprietà (è duplicata in ogni oggetto: OK!)
+};
+Circle.prototype.getArea = function() { // metodo (è condiviso da tutti gli oggeti Circle: OK!), e va messo FUORI del costruttore, come si fa qui
+ return (Math.PI * Math.pow(this.radius, 2));
+};
+e poi:
+var myCircle = new Circle(10);
+
+So make sure you remember to put the new keyword there.
+One clue is to always make the function constructor names capitalized,
+that's why you will remember that this is not just a regular function,
+it's actually a function constructor and you must use it with the keyword new.
+
+Lecture 49 Object Literals and the 'this' Keyword
+ In the previous lecture, we saw how the this keyword behaves itself when it's part of a function constructor.
+That is, it's referring to the function itself, or the object itself when that function is invoked together with the new keyword.
+In this lecture, I would like to look at object literal and how the this keyword behaves itself inside of one.
+So when an object literal gets created, "this", instead of pointing to
+the global object (window), is actually pointing to the actual object that got created.
+
+Lecture 50 Arrays
+Crazione:
+
+var a = new Array();
+
+Once I created the array I can now set items into that array.
+In JavaScprit c'è la tipizzazione dinamica, e quindi ...
+And arrays are zero based, so I can say zero and let's say in the first position, which is position zero, I'll place a string, and I'll use my name, Yaakov.
+In the second position, which is position one, I'll place a number, let's say two.
+In the third position, which is two, I'll place a function.
+So in the fourth position, I am going to place an object literal:
+
+a[0] = "Yakov";
+a[1] = 2;
+a[2] = function (name) {
+  console.log("Hello " + name);
+}
+a[3] = {course: "HTML, CSS & JS"};
+console.log(a);
+console.log(a[1]);
+a[2]("Alex"); // esegue la function contenuta in a[2]
+a[2](a[0]); // passo "Yakov" alla function
+console.log(a[3].course); // scrive "HTML, CSS & JS"
+
+So because of dynamic typing, in JavaScript I'm able to store different
+types of objects in the same array, which is not true of most languages.
+Okay, I can also create arrays using a short hand array notation:
+var n = ["Alex", "Sandro", "Gianni"];
+console.log(n);
+for (var j = 0; j < n.length; j++)
+  console.log("Ciao " + n[j]);
+};
+
+Now what's interesting about arrays in JavaScript is that they can even
+be sparse
+And there's a special for loop that you could use to traverse the properties of an object:
+var myObj = {
+  name: "Yakov",
+  course: "CSS, JS",
+  plarform: "Coursera"
+};
+for (var prop in myObj) {
+  console.log(prop + ": " + myObj[prop]);
+};
+
+Now we know that in JavaScript arrays are just objects and
+the indices are just property names.
+So technically speaking I could use the same type of four loop
+on my n array as well: 
+var n = ["Alex", "Sandro", "Gianni"];
+for (var nome in n) {
+  console.log("Ciao " + n[nome]);
+};
+
+Lecture 51 Closures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
