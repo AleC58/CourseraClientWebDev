@@ -1433,6 +1433,354 @@ for (var nome in n) {
 };
 
 Lecture 51 Closures
+capito zero!
+
+Lecture 52 Fake Namespaces
+And what's going on is that one script is stepping on the toes of the other, basically. So how do we solve this situation?
+Well, one way of solving the situation is introduce name spaces, and a name space is basically just a container for some functionality and for some declarations.
+The only thing is,
+is JavaScript doesn't really have name spaces that other languages have.
+However, in JavaScript we could fake name spaces very easily. 
+And we'll just make it equal to an empty object.
+Now instead of just declaring name right here in the global scope,
+what I'll do is I'll declare name as a property of that object:
+var myNameSpace = {};
+var myNameSpace.var1 = "valore";
+var myNameSpace.var2 = 22;
+myNameSpace.myFunction = function (param) {
+  ...
+};
+... e questo per ogni file di libreria, così da isolare le cose di quel file rispetto a tutti gli altri. Poi le cose si usano con il "prefisso", es:
+myNameSpace.var2
+So that worked perfectly, ma non mi permette di tenere delle cose "private": è tutto "pubblico". Per avere cose "private"posso usare le IIFE.
+So this is something that you could do in order to separate
+kind of your name spaces, separate your functionality into separate files and
+also into separate name spaces, so you don't step one up on the other.
+But there's something you could do to go even further in order to separate
+the different variables that are sort of like private variables
+between different scripts and different execution contexts. 
+but there is something you could do to go even further
+Well, one more thing we could do is introduce something that's called
+immediately invoke function expression (IIFE:
+(function () {
+  //codice della funzione
+})();
+Ora, la "function" tra parentesi tonde è un'espressione che produce un valore, e questo valore è un oggetto function. E questo oggetto viene eseguito perché è seguito da "()". Posso anche passare dei parametri:
+(function (param) {
+  //codice della funzione
+})("valore del parametro, in questo caso una stringa");
+
+Con il "fake namespace", come abbiamo visto, tutte le cose sono "pubbliche", e fanno parte dell'oggetto "window".
+Le IIFE ci permettono di tenere cose "private":
+(function (window) {
+  var alexGreeter = {}; // name space
+  alexGreeter.name = "Alex";
+  var greeting = "Hi";  // privato
+  alexGreeter.sayHi = function () {
+    console.log(greeting + alexGreeter.name);
+  }
+  window.alexGreeter = alexGreeter; // rende pubblico alexGreeter (e le sue proprietà)
+})(window);
+
+Lecture 53 DOM Manipulation
+JavaScript in the browser wouldn't really be any fun if you wouldn't be able to manipulate the page that that JavaScript is attached to.
+So in this lecture, we're going to speak about DOM manipulation, otherwise known as Document Object Model manipulation.
+So the first question that comes when we start talking about DOM manipulation is
+how to include your JavaScript library inside your HTML page.
+And before we even start going on about where to include the script.js,
+let's go ahead and learn about this special object called document.
+And the document object represents the entire HTML document,
+the document object model.
+So we know that there is an object called window, otherwise known as this, and
+it contains a whole bunch of things.
+One of the things it contains is a document property. 
+ the document object contains our entire HTML page.
+This document object is the stepping stone for
+us to be able to get at individual elements within our webpage. 
+So one of the central methods that the document object has
+is being able to get at the element by the id. 
+now the reason we're able to use document here is because we're in the global scope.
+And global scope is window.
+And window has an attribute, has a property called document in it. 
+Let's go ahead and console.log this.
+So let's see what happens when we do that.
+Let's save that, and we get null.
+Well, that's kind of strange.
+Why would we get null?
+Why are we not getting this Lecture 53 title?
+Well, the reason we're not getting it is because of when
+this line is being executed.
+Lo script nella sezione <head> viene eseguito quando il documento non è ancora stato elaborato dal browser, e quindi il DOM non è ancora stato creato-
+So, therefore, you get null.
+So how do we solve that? 
+it's always best not to keep it in the head, but
+actually place it at the very end of the document. 
+PER ME NO!
+So document is actually an instance of HTMLDocument.
+So if you go on the web and look up HTMLDocument, you will be able to see all
+the methods that HTMLDocument defines for you to help you manipulate the webpage. 
+Se ho una textbox (<input id="idTextBox" type="text") per prendere il suo valore:
+document.getElementById("idTextBox").value
+Per "scrivere" sulla pagina web recupero un elemento (es, ho: <div id="content"></div>):
+document.getElementById("content").textContent = "messaggio da visualizzare"
+Ma se voglio mettere anche tag:
+document.getElementById("content").innerHTML = "<h2>messaggio da visualizzare</h2>"
+
+Alternativa più potente a getElementById è querySelector, che funziona come i selettori CSS:
+document.querySelector("#content")
+
+Lecture 54 Handling events
+Now first of all, what are event handlers?
+Well event handlers are basically functions that you
+bind using specific methods to certain events that happen in the browser. 
+Now those events might be triggered by just a lifecycle.
+Meaning something like the page loaded.
+That's an event.
+Or it could be triggered by user interaction,
+like a user typed a character or user clipped something. 
+So one of the most simplest ways to assign an event handler to a particular element is to just use the on something attribute on that element. FA SCHIFO
+Now this option comes with some side effects.
+One side effects is that you kind of have to dirty up your HTML with these onclick, onblur, onkeydown and so on.
+HTML is really just for content it's not for behavior. 
+another way of doing this.
+In this way it's called unobtrusive event binding. Nel file js:
+document.querySelector("button").addEventListener("click", myFunctionHandler);
+(e in myFunctionHandler, "this" punta al button!)
+Oppure:
+document.querySelector("button").onclick = myFunctionHandler; // SENZA ()!!!
+Ma addEventListener è il migliore (per "this").
+Problema manipolazione DOM se ho gli "<script>" in <head>:
+window.onload
+Ma qui propone:
+document.addEventListener("DOMContentLoaded", function(event) {...});
+This function will get executed when this Event files called, dom content loaded and that will happen before any images, or any CSS, or any other script is loaded.
+
+Lecture 55 The 'event' argument
+There's an argument that's passed by the JavaScript engine into every single event handler.
+Vedi file logMouseMove.html
+
+Lesson 56 HTTP Basics
+Before we launch into discussion about AJAX, which is essentially a client-server communication technique, let's talk about the language in which the client, that is the browser, communicates with the server.
+And the language that they use, otherwise known as protocol, is HTTP. 
+Number one is what is HTTP?
+Well HTTP stands for HyperText Transfer Protocol, HTTP.
+And it's based on a request response stateless protocol.
+And stateless in this context means that when the server responds
+to a request from a browser,
+that response does not depend on any previous requests that the browser made. 
+So the way the client-server communication works is as follows.
+The client, the browser usually, opens the connection to the server.
+Then the client sends an HTTP request for a particular resource.
+And then the server responds with an HTTP response to the client,
+usually with a resource that the client requested, but
+sometimes the resource is not found or some other error occurs.
+And then the client,
+that is again the browser usually, closes the connection to the server. 
+... let's talk about how to identify a resource on the web.
+The first one is Uniform Resource Name, otherwise known as URN.
+What a URN is, is a way to uniquely identify a resource or
+a name of a resource.
+The thing though about URNs is they do not tell us how to get that resource.
+And URNs are very commonly used by organizations and
+institutions who want to standardize to maintain some uniqueness of a particular
+resource within that organization. 
+Another term is URI, and URI stands for Uniform Resource Identifier.
+And what that does is uniquely identifies a resource or a location of a resource.
+But even though it identifies uniquely the location of resource,
+it still does not necessarily tell us how to get to that resource.
+And the reason it doesn't is because within a URI,
+the context is usually missing.
+It's very similar to URN except the URI is much more directory
+type of structure looking thing. 
+The last final term is URL, and that stands for Uniform Resource Locator.
+And this is something that's obviously thrown around on the web
+all over the place.
+When you ask somebody for a website address, it's a URL,
+it's a Uniform Resource Locator.
+And URL is a form of URI that provides the information on how to get that resource. 
+So let's take a look at an HTTP request structure, in other words,
+the actual language that the browser communicates with the server.
+And this is an example of a GET request:
+GET /index.html?name=John HTTP 1.1
+And that command (GET) is called a method
+è seguito da URI string (/index.html) e da query string (name=John)
+So this is the command that the browser issues
+to get at a particular resource on a website.
+I'm sure, looking at it,
+you could start seeing that there's something strange about this command.
+Where is the website name?
+How do I know it's a URI, it's not a URL?
+The reason it's a URI, not a URL, is very simple.
+This command is only issued once the browser actually connects to the server.
+So we're already connected to coursera.org or to mysite.org.
+And now that we've connected and established a connection to that
+particular website, now we are asking for a URI within the context of that website.
+The browser first has to make a connection to the server.
+And once it makes a connection, it starts the HTTP protocol,
+starts the language of communication between the browser and the server. 
+One of them is, again, the GET command or the GET method.
+And what that does is it says,
+I want to retrieve the resource from the particular location.
+And the way you pass the data using that method
+is you pass it to the server as part of the URI.
+As you remember, we had the query string, well, that's how you pass the data.
+And the data is not so much to be stored on the server as much as really a way for
+us to tell the server and identify a particular resource, or
+maybe filter a particular resource, the data from that particular resource.
+So we need to pass the data to the server in order to get the data back.
+It's not really for the server to store it, necessarily. 
+The other command, or the other method, HTTP method, is POST.
+And this method sends the data to the server in order to be processed.
+And the data that you sent to the server is sent in the message body.
+Now the server may still respond, and most of the time does,
+respond with some sort of response, maybe an HTML page, maybe some sort of data.
+But that data is more viewed as a status or kind of a confirmation that
+the data that you sent to the server was in fact processed, whatever that means. 
+So this is a typical POST request, and
+you could see there's a POST /index.html, but there's no query string:
+POST /index.html HTTP 1.1
+Host: coursera.org
+Accept-Charset: utf8
+name=John
+The query string or
+the data that we're passing comes as part of the body of the message.
+So there's a few parts here that actually exist on pretty much every POST request,
+which is the first line, the POST request itself, followed by some request headers.
+In this example, Accept-Charset is telling the server that our
+browser knows how to process utf-8 character set.
+And, after that, we have the message body.
+This is where the data is being passed to the server. 
+Well, it starts with just a response status line.
+And the response status line has three components.
+The first one is the HTTP version.
+So the server spits back out the version of HTTP it's communicating.
+The second is the response status code.
+And the third is the English phrase describing that status code.
+And all three parts are separated by a single space.
+So a typical HTTP response may look something like this.
+It will start with HTTP/1.1 200 OK.
+It will follow by some HTTP response headers,
+in this case, it will tell you what the date of this document is.
+It will tell you the content type, in this case, it's text in HTML.
+And then the body of the message or the body of the response will be HTML.
+Now the message body of the response need not be HTML.
+It can be, for example, plain text, XML, or
+JSON.
+So let me show you some common response status code.
+One of them is 200 OK.
+And that basically means that the server is saying, okay, I got your request,
+and here's the content you requested.
+Another one is 404 Not Found.
+In this case,
+the server says, I just can't find the resource that you requested.
+403 Forbidden, and that means that, for whatever reason,
+the server thinks that the client, your browser, is unauthenticated and
+tries to access a secure resource that requires some sort of username and
+password or a certificate or something like that.
+And another one, pretty common, is 500 Internal Server Error, and
+usually that happens when some error was raised on the server and
+was unhandled on the server and it kind of spilled over. 
+Now remember, the GET method sends the data to the server as part of the URL or
+part of the URI.
+That's going to be important for us as we move forward.
+And the POST method sends the data as part of the message body.
+And some common response codes are 200, that's fine, the data is coming,
+404, it's not found, 500, there's some internal server error. 
+
+Lesson 57 Ajax Basics
+So what is Ajax exactly?
+Well the word Ajax used to stand for Asynchronous Javascript and XML.
+The thing though is while Ajax started with XML, and
+that was the data type that was being sent over the wire browser and
+the server back and forth, very few apps actually use it nowadays.
+Instead, most of the time nowadays, plain text sometimes is just regular HTML and
+then JSON, which we're going to talk about later, is used instead of XML. 
+Now why does Ajax exist to begin with?
+Well we can answer that question by taking a look
+at how traditional web applications worked and what their flow was like.
+A traditional web application started with a web page and
+usually a user is going to press a button, and
+that is going to generate an HTTP request that is going to be sent to the server.
+And the server is going to respond with some response,
+which is going to be a whole new page, and
+that whole new page could be basically one 99% identical to the original page.
+And there might be only one string really that changed between the first page and
+the second page.
+But in the traditional Web App Flow, the entire page with all the same
+elements need to be returned anyway just to display a minor update. 
+Now in the Ajax web app flow, you have a web page and
+it also makes an HTTP request.
+And that is usually sent by Javascript, and
+that HTTP request is sent by Javascript.
+And the server also replies, and
+its response is a small piece of data that's inserted, usually,
+into a current page, and the only thing that changes is some minor piece of data.
+Now obviously, this is way faster.
+The response is faster, you use less bandwidth,
+because only one small piece of data is returned.
+And obviously, it's a much nicer user experience, as well.
+Now, before we through the process of how Ajax works,
+let's remind ourselves what is synchronous versus asynchronous execution
+since Ajax has asynchronous as its first word. 
+Well synchronous execution is execution of one programming instruction at a time.
+What that means is that you can't start execution of another instruction
+until the first instruction has finished its execution.
+On the other hand, on the asynchronous execution, what that means is that
+it's execution of more than one programming instruction at a time.
+Asynchronous instruction returns right away.
+It sends off its instruction and it's ready to execute the next one right away.
+And the actual execution of that asynchronous instruction
+is really done in a separate thread process. 
+Ci sono parecchi componenti nel brovser ...
+And while the Javascript engine itself is synchronous,
+HTTP requestor is certainly not.
+HTTP requestor is asynchronous. 
+So armed with this knowledge, let's take a look at the AJAX process.
+So we have the Javascript engine and we have this HTTP requestor component, and
+the Javascript engine is going to have some Javascript line of
+code being executed.
+Then another Javascript line of code being executed.
+Then finally it comes to a Javascript line that executes an Ajax request.
+So what happens at that point?
+Well at that point, the Ajax request uses a special Javascript object
+to reach out to the HTTP requester component.
+And notice what I am indicating here on the slide
+is that the next line of Javascript code executes it right away.
+The response of the HTTP requestor is not waited on.
+Instead, when we make the actual Ajax request and reach out to this HTTP
+requestor component, along with our request, we pass in an address
+of a Javascript function that is going to serve as the response handler for
+when the response from the other server or this HTTP requestor comes back.
+However, meanwhile, we continue on our merry way, and
+the Javascript engine keeps executing one line at a time.
+At certain point, it's executed all the code it can, and
+its execution stack is empty.
+Even that point, the HTTP requestor is done and
+has received its response from our server, it may, at that point,
+use that address of that Javascript function that we gave it to start with and
+reach out back to the Javascript engine and execute the handling of the response.
+And that's the callback function, that's the function that's going to handle
+the server response, so that's the basic AJAX process. 
+... nella seconda parte spiege il codice js e l'oggetto HTTPrequest, onreadystatechange, status, la callback function, send, readyState
+Ricordarsi che le chiamate sono asincrone, e quindi i dati ricevuti in risposta dal server vanno usati solo dentro la funzione di callback!
+
+Lecture 58 Processing JSON
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

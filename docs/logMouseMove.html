@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+// window.onload
+document.addEventListener("DOMContentLoaded",
+	function (event) {
+		document.querySelector("body").addEventListener("mousemove",
+			function (event) {
+				if (event.shiftKey) {
+					var mX = event.clientX;
+					var mY = event.clientY;
+					document.getElementById("x").value = mX;
+					document.querySelector("#y").value = mY; // alternativa a getElementById
+					console.log("x: " + mX + ";   y: " + mY);
+				}
+			}
+		);
+	}
+);
+</script>
+<style type="text/css">
+	body {
+		background-color: #eec;
+	}
+	form div {
+		margin: 5px;
+	}
+	input {
+		width: 40px;
+	}
+</style>
+<title>Log mouse move</title>
+</head>
+<body>
+	<h1>Log mouse move</h1>
+	<p>Fa il log sulla console (e contemporaneamente scrive sulle textBox) delle coordinate del mouse, ma solo quando si tiene premuto il tasto Shift</p>
+	<form>
+		<div>
+			<label>x: </label>
+			<input type="text" name="x" id="x">
+		</div>
+		<div>
+			<label>Y: </label>
+			<input type="text" name="y" id="y">
+		</div>
+	</form>
+</body>
+</html>
