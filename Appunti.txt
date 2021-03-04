@@ -1765,6 +1765,49 @@ the server response, so that's the basic AJAX process.
 Ricordarsi che le chiamate sono asincrone, e quindi i dati ricevuti in risposta dal server vanno usati solo dentro la funzione di callback!
 
 Lecture 58 Processing JSON
+So what is JSON?
+Well, JSON stands for JavaScript Object Notation.
+And what it is, it's a lightweight data interchange format.
+And it's great for a couple of reasons.
+Number one, is it's easy for humans to read and write JSON and
+it's easy for machines to parse and generate JSON.
+So in a lot of sense this is very similar to XML because it also was
+pretty easy to write for machines and for humans to read and write.
+But JSON notation is quite a bit simpler and shorter.
+And most importantly it is just like XML, completely dependent of any language.
+... sintassi
+But even if you're in the browser, and you're in your JavaScript program,
+you can certainly take the string and store it inside a variable.
+All you have to do is put single quotes around it.
+The reason you put single quotes around it is because there are already double
+quotes inside of that string. 
+JSON is NOT a Javascript Object Literal.
+JSON is just a string.
+The syntax of JSON is based on object literal but it is not one and the same.
+You still need to covert between JSON and string.
+If you wanted an object in Javascript, you would have to take the JSON string and
+convert it to an object.
+And similarly, if you want JSON, you would have to take an object and
+convert it back to a JSON string.
+And JavaScript provides a couple utilities for that:
+var obj = JSON.parse(jsonstring);
+var str = JSON.stringify(obj);
+
+Lecture 59 Fixing Mobile Nav Menu Automatic Collapse
+bah
+
+Lecture 60 Dynamically Loading Home View Content
+But for this lecture all we need to do is figure out how to insert
+the previous mait page content inside the main content placeholder. 
+Procedo in modo completamente diverso dal corso.
+Uso Ajax tramite jquery.
+In locale NON FUNZIONA: la richiesta è bloccata dalla CORS policy!
+Si può risolvere installando un web server
+... oppure si usa browser-sync :-) (che fa da server):
+da cmd portarsi sulla dir del sito e dare il comando
+browser-sync start --server --directory --files "*"
+-> si apre nel browser una scheda sulla directory, e li fare click su index.html
+
 
 
 

@@ -9,23 +9,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		url: snpIndex,
 		type: "GET",
 		dataType: "text",
-		crossDomain: true,
-		headers: {"X-My-Custom-Header": "some value"}
+		//crossDomain: true,
+		//headers: {"X-My-Custom-Header": "some value"}
 	})
 	.done(function (risposta) { // successo
-		alert(risposta);
-		//$("#ris").html(risposta);
+		$("#main-content").html(risposta);
 	})
 	.fail(function (xhr, status, errorThrown) {
 		alert("Sorry, there was a problem!");
 	});
 });
-
-function init(event) {
-	//frm = $("#frm");
-	//
-	alert(this);
-};
 
 // Show loading icon inside element identified by 'selector'
 var showLoadingImg = function (selector) {
