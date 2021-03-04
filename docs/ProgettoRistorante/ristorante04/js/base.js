@@ -3,14 +3,11 @@
 var snpIndex = "snippets/snpIndex.html";
 
 document.addEventListener("DOMContentLoaded", function (event) {
-	//alert(event);
 	showLoadingImg("#main-content");
 	$.ajax({
 		url: snpIndex,
 		type: "GET",
 		dataType: "text",
-		//crossDomain: true,
-		//headers: {"X-My-Custom-Header": "some value"}
 	})
 	.done(function (risposta) { // successo
 		$("#main-content").html(risposta);
