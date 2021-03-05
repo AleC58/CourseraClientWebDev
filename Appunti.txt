@@ -1799,14 +1799,50 @@ bah
 Lecture 60 Dynamically Loading Home View Content
 But for this lecture all we need to do is figure out how to insert
 the previous mait page content inside the main content placeholder. 
-Procedo in modo completamente diverso dal corso.
-Uso Ajax tramite jquery.
+Io procedo in modo completamente diverso dal corso:
+uso Ajax tramite jquery.
 In locale NON FUNZIONA: la richiesta è bloccata dalla CORS policy!
 Si può risolvere installando un web server
 ... oppure si usa browser-sync :-) (che fa da server):
+https://github.com/jhu-ep-coursera/fullstack-course4/blob/master/FAQ.md#q-i-am-getting-xmlhttprequest-cannot-load-filesomepath-error-what-am-i-doing-wrong
 da cmd portarsi sulla dir del sito e dare il comando
 browser-sync start --server --directory --files "*"
--> si apre nel browser una scheda sulla directory, e li fare click su index.html
+-> si apre nel browser predefinito una scheda sulla directory, e li fare click su index.html
+In index.html tagliare il contenuto del div #main-content e incollarlo nel (nuovo) file snpIndex.html, che verrà caricato tramite chiamata Ajax al suo (precedente) posto. Questo lo si fa da js con Ajax/jQuery (v. base.js).
+
+Lecture 61 Dynamically Loading Menu Categories View
+In this lecture, we would like to dynamically insert the menu categories
+when the user clicks on the menu tile.
+Obviously at this point we need the data to fill up these menu categories and
+also to point to these pictures that are specific to each category.
+So how do we do that?
+First of all, how do we get the data?
+Well, there's an app that we've deployed on herokuapp.com.
+And the app is called davids-restauarant.herokuapp.com/...
+And basically what that is is a rest API that provides us JSON data that we need
+for our application.
+And even though the actual website is going to be hosted on GitHub pages, so
+it's going to be GitHubPages.io or something like that.
+The data is actually going to sit as this app,
+as this restaurant, David's restaurant app on Heroku. 
+The fact that they're hosted on two different domain names
+is actually a problem.
+And the reason that is a problem is because every browser comes with this
+security mechanism that's called same-source or same-origin rule.
+And basically, what that means is is if you load JavaScript that
+tries to reach out through Ajax to any other domain name
+other than the one that this particular HTML page was served from,
+the browser will stop that activity and will not allow it.
+CORS! E' per la sicurezza!
+Now in that case how can we ever get this data?
+The browser's going to stop us.
+Well, comes this new technology called CORS,
+otherwise known as Cross Origin Resource Sharing. 
+Basically the idea of CORS is there's going to be some HTTP headers (mandati dal SERVER) that the browser will know about and will tell the browser that it is actually safe to reach out to this particular domain name and
+this is exactly what's going on in the case of this David's Restaurant app.
+It's actually communicating back to a browser and sending those headers telling
+us even though you really shouldn't be able to reach out with the JavaScript
+anywhere else you are allowed to reach out to me, and it is a safe thing to do. 
 
 
 

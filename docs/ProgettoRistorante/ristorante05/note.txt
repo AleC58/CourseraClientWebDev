@@ -1,0 +1,7 @@
+Versione 4
+Corrisponde a 60 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture60/after)
+
+Carica tramite AJAX il contenuto principale (div #main-content) della pagina index.html.
+Usa AJAX tramite jQuery.
+Il contenuto di #main-content è stato tolto da index.html e messo in snpIndex.html, da dove viene caricato.
