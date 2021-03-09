@@ -1,6 +1,7 @@
-.row {
-	margin-bottom: 15px;
+#pagina {
+	margin-bottom: 25px;
 }
-.row > div {
-	border: 2px solid black;
+
+li p {
+	margin-top: 4px;
 }

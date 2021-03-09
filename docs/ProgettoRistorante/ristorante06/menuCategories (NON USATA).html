@@ -17,8 +17,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>-->
 	<script src="lib/jQuery/jquery-3.6.0.min.js"></script>
 	<script src="lib/bootstrap/bootstrap.min.js"></script>
-	<!-- miei js -->
-	<script src="js/base.js"></script>
+	<!-- miei js
+	<script src="js/base.js"></script> -->
 	<!-- Google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
@@ -45,26 +45,26 @@
 						<span>Kosher certified</span>
 					</p>
 				</div> <!-- .navbar-brand -->
-				<button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsable-nav" aria-controls="collapsable-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsable-nav" aria-controls="collapsable-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div id="collapsable-nav" class="collapse navbar-collapse">
 					<ul id="nav-list" class="navbar-nav ms-auto">
-						<li class="nav-item d-block d-md-none active" aria-current="page">
+						<li class="nav-item d-block d-md-none">
 							<a class="nav-link" href="index.html">
 								<span class="bi bi-house-door-fill"></span><br class="d-none d-sm-block"> Home
 							</a>
 						</li>
-						<li class="nav-item">
-							<a id="lnkNavMenuCategories" class="nav-link" href="#"> <!-- menuCategories.html -->
+						<li class="nav-item active" aria-current="page">
+							<a class="nav-link" href="menuCategories.html">
 								<span class="bi bi-book-half"></span><br class="d-none d-sm-block"> Menu</a>
 						</li>
 						<li class="nav-item">
-							<a id="lnkNavAbout" class="nav-link" href="#"> <!-- about.html -->
+							<a class="nav-link" href="about.html">
 								<span class="bi bi-info-circle-fill"></span><br class="d-none d-sm-block"> About</a>
 						</li>
 						<li class="nav-item">
-							<a id="lnkNavAwards" class="nav-link" href="#"> <!-- awards.html -->
+							<a class="nav-link" href="awards.html">
 								<span class="bi bi-award-fill"></span><br class="d-none d-sm-block"> Awards
 							</a>
 						</li>
@@ -87,8 +87,86 @@
 	<div id="xs-deliver" class="text-center d-block d-md-none">* We Deliver</div>
 
 	<div id="main-content" class="container"> <!--***** main-content *****-->
-		 <!-- caricato tramite AJAX request dal file snpIndex.html -->
+		<h2 id="menu-categories-title" class="text-center">Menu Categories</h2>
+		<div class="text-center">
+			<p>Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.</p>
+		</div>
+		<section class="row">
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xxs-12">
+				<a href="singleCategory.html">
+					<div class="category-tile">
+						<img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+						<span>Lunch</span>
+					</div>
+				</a>
+			</div>
+		</section>
 	</div> <!-- #main-content -->
+
 
 	<footer>
 		<div class="container">

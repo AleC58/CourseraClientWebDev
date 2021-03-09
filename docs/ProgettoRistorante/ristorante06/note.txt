@@ -1,10 +1,15 @@
-Versione 5
-Corrisponde a 61 after
-(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture61/after)
+Versione 6
+Corrisponde a 62 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture62/after)
 
-Va verso una SPA (Single Page Application).
-Sostituisce la pagina menuCategories.html caricando le categorie sempre dentro il #main-content della pagina index.html. 
+Si prosegue nella logica SPA (Single Page Application).
+Sostituisce la pagina singleCategory.html caricando le categorie sempre dentro il #main-content della pagina index.html. 
 Il caricamento viene fatto tramite AJAX, riempiendo vari snippet con dati forniti da un servizio web ospitato su Heroku.
+
+
+
+
+
 
 index.html
 - nei link del menu di navigazione sostituire il contenuto degli href con "#" (i riferimenti effettivi si mettono da codice, che caricherà sempre in index.html gli snippet corretti); mettere gli id, che serviranno per agganciare i gestori degli eventi

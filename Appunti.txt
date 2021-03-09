@@ -1843,6 +1843,12 @@ this is exactly what's going on in the case of this David's Restaurant app.
 It's actually communicating back to a browser and sending those headers telling
 us even though you really shouldn't be able to reach out with the JavaScript
 anywhere else you are allowed to reach out to me, and it is a safe thing to do. 
+Va verso una SPA (Single Page Application).
+Vedi note.txt in ristorante05
+
+Lecture 62 Dynamically Loading Single Category View
+Sempre nella logica SPA (Single Page Application), crea il codice per #mainContent relativamente a quella che sarebbe stata la pagina singleCategory.html
+Vedi note.txt in ristorante06
 
 
 
