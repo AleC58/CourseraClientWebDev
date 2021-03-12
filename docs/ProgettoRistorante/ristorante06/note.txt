@@ -1,0 +1,53 @@
+Versione 6
+Corrisponde a 62 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture62/after)
+
+Prosegue con la logica SPA (Single Page Application).
+Viene creato il #mainContent per quella che sarebbe stata la pagina singleCategory.html
+
+Ci sono prima da sistemare i link da menuCategories.html alle singole categorie.
+Seguendo il corso "sporchiamo" il codice HTML di snpMenuCategories.html aggiungendo i gestori del click. E' più elegante lavorare in modo "non intrusivo", ma diventa complicato: l'ideale sarebbe creare il DOM invece che lavorare con il codice HTML dello snippet.
+
+Quando in "Menu categories" si fa click su una categoria, si deve andare alla pagina con le voci di quella categoria ("singleCategory.html").
+I dati relativi si prendono sempre dal servizio web su heroku, all'url
+http://davids-restaurant.herokuapp.com/menu_items.json?category=[valore]
+fornendo il codice (categoryShortName) della categoria desiderata.
+
+Si lavora, in logica SPA, solo su index.html.
+
+- loadMenuItems(categoryShortName)
+è richiamata da click su una delle categorie (es. "Lunch" o "Soup");
+crea la "pagina" (cioè il codice da mettere in #mainContent) con i piatti dalla categoria scelta.
+Per prima cosa si prendono le informazioni relative alla categoria scelta e ai sui piatti (items) facendo una richiesta Ajax su
+"https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName
+A questo punto chiamiamo
+- creaMainContentConItemsDellaCategoria(categoryAndItemsData)
+per costruire il codice html da iniettare in #mainContent
+
+
+
+
+
+
+
+
+
+
+- loadMenuItems(categoryShortName)
+è richiamata da click su una delle categorie (es. "Lunch" o "Soup");
+crea la "pagina" (cioè il codice da mettere in #mainContent) con i piatti dalla categoria scelta.
+Per prima cosa si prendono le informazioni di intestazione (name e special_instructions) relative alla categoria scelta facendo una richiesta Ajax su
+http://davids-restaurant.herokuapp.com/categories.json
+e filtrando i risultati; con i dati della categoria scelta si richiamata
+
+- getItemsDellaCategoriaEcc(categoria)
+che fa una chiamata ajax a
+https://davids-restaurant.herokuapp.com/menu_items.json?category=parametro
+per prendersi i piatti (items) della categoria scelta.
+A questo punto abbiamo tutti i dato che ci servono; chiamiamo quindi
+
+- creaMainContentConItemsDellaCategoria(categoria, categoryItemsData)
+per costruire il codice html da iniettare in @mainContent
+
+
+
