@@ -1,0 +1,9 @@
+Versione 7
+Corrisponde a 63 after
+(https://github.com/jhu-ep-coursera/fullstack-course4/tree/master/examples/Lecture63/after)
+
+Gestito il cambio dello stile "active" nelle voci del menu (usato jQuery, che semplifica molto).
+Fatte inoltre le "pagine" Award, About e Specials:
+- Award e About contengono dei semplici testi
+- Specials è una categoria particolare, e viene gestita con il seguente gestore nel tile corrispondente:
+$("#lnkTileSpecials").click(function() {loadMenuItems("SP")});

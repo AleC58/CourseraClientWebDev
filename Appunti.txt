@@ -1850,3 +1850,5 @@ Lecture 62 Dynamically Loading Single Category View
 Sempre nella logica SPA (Single Page Application), crea il codice per #mainContent relativamente a quella che sarebbe stata la pagina singleCategory.html
 Vedi note.txt in ristorante06
 
+Lecture 63 Changing 'active' Button Style Through Javascript
+Vedi note.txt in ristorante07
