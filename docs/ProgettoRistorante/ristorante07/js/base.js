@@ -174,7 +174,9 @@ function creaMainContentAbout() {
 	var totHTML = 
 		'<h2 id="about-title" class="text-center">About</h2>' +
 		'<p>This is the final version of the Restaurant Project of the <a href="https://www.coursera.org/learn/html-css-javascript-for-web-developers" target="_blank">"HTML, CSS, and Javascript for Web Developers" course</a> delivered by the Johns Hopkins University through the "Coursera" web platform.</p>' +
-		'<p>The course is really interesting and worth following: I strongly recommend it.</p>';
+		'<p>The course is really interesting and worth following: I strongly recommend it.</p>' +
+		'<p>This site implementation is quite different from the one proposed in the course, as I chose to use Bootstrap version 5, while the course refers (March 2021) to version 4. This forced me to study Bootstrap more thoroughly, and therefore to learn it better. Also I have used jQuery extensively (which is not covered in the course) for both AJAX calls and DOM manipulation.</p>' +
+		'<p class="firma">Alessandro Cazziolato</p>';
 	objMainContent.html(totHTML);
 }
 

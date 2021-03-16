@@ -7,3 +7,5 @@ Fatte inoltre le "pagine" Award, About e Specials:
 - Award e About contengono dei semplici testi
 - Specials è una categoria particolare, e viene gestita con il seguente gestore nel tile corrispondente:
 $("#lnkTileSpecials").click(function() {loadMenuItems("SP")});
+
+Questa implementazione del sito è abbastanza diversa rispetto a quella proposta nel corso, in quanto ho scelto di usare la versione 5 di Bootstrap, mentre il corso fa riferimento (marzo 2021) alla versione 4. Questo mi ha obbligato a studiare più approfonditamente Bootstrap, e quindi di impararlo meglio. Inoltre ho usato estensivamente jQuery (che nel corso non viene trattato) sia per le chiamate AJAX che per la manipolazione del DOM.

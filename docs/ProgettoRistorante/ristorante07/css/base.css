@@ -9,6 +9,10 @@ a {
 	text-decoration: none;
 }
 
+.firma {
+	font-style: italic;
+}
+
 #header-nav {
 	background-color: #f6b319;
 	border-radius: 0;

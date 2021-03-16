@@ -22,7 +22,7 @@ Si sfruttano le GitHub pages:
 browser-sync
 Serve per evitare di dover ricaricare manualmente le pagine sul browser
 dopo le modifiche.
-Da cmd portarsi sulla dir del sito (C:\Users\acazz\Documents\GitHub\Coursera-test\site) e dare il comando
+Da cmd portarsi sulla dir del sito (C:\Users\acazz\Documents\GitHub\CourseraClientWebDev\docs\ProgettoRistorante\) e dare il comando
 browser-sync start --server --directory --files "*"
 
 Da adesso in poi, non appena si salvano le modifiche ai file di questa
